@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Present Simple и Present Continuous · voronovaschool</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--m:#4A1A26;--m2:#7A2E40;--g:#5F7284;--gl:#DCE3E8;--b:#F1E9DB;--b2:#FBF7EF;--ink:#2B1F22}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--b);color:var(--ink);font:400 clamp(18px,2.2vw,21px)/1.6 Manrope,system-ui,sans-serif}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;line-height:1.05;margin:0}
+.hero{background:var(--m);color:var(--b);text-align:center;padding:64px 16px 56px;overflow:hidden;position:relative}
+.ring{width:min(420px,80vw);height:min(420px,80vw);margin:0 auto -2px;position:relative}
+.ring svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 60s linear infinite}
+.ring text{font:500 15px 'Cormorant Garamond',serif;fill:#C9B8A6;letter-spacing:3px}
+.ring h1{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;font-size:clamp(46px,9vw,84px)}
+.ring h1 small{font:italic 500 clamp(18px,3vw,26px)/1.3 'Cormorant Garamond',serif;color:#C9B8A6;margin-top:10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+nav{position:sticky;top:0;z-index:9;background:var(--g);display:flex;gap:6px;overflow-x:auto;padding:10px 12px;justify-content:center}
+nav a{color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:6px 16px;border-radius:99px;white-space:nowrap;transition:.2s}
+nav a:hover,nav a.on{background:var(--b);color:var(--m)}
+section{max-width:940px;margin:0 auto;padding:64px 20px 8px}
+h2{font-size:clamp(38px,6vw,58px);color:var(--m);margin-bottom:8px}
+.lead{color:var(--g);font-size:1.05em;margin:0 0 28px}
+.en{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.3em;line-height:1.3;color:var(--m)}
+.ru{color:#6b5e60;font-size:.85em}
+b.k{color:var(--m2)}
+table{width:100%;border-collapse:collapse;background:var(--b2);border-radius:14px;overflow:hidden;margin:14px 0}
+th{background:var(--m);color:var(--b);text-align:left;padding:12px 16px;font-weight:600}
+td{padding:12px 16px;border-top:1px solid #e3d8c6}
+.box{background:var(--b2);border-radius:14px;padding:18px 22px;margin:14px 0;border-left:6px solid var(--g)}
+.box.w{border-color:var(--m2);background:#F6E7E7}
+.pron{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:14px 0}
+.pron div{background:var(--gl);border-radius:14px;padding:14px 18px}.pron .en{display:block}
+.uses{display:grid;gap:16px}
+.use{background:var(--b2);border-radius:18px;padding:22px 26px;display:grid;grid-template-columns:64px 1fr;gap:4px 18px;transition:transform .25s,box-shadow .25s}
+.use:hover{transform:translateX(6px);box-shadow:-6px 0 0 var(--m2)}
+.use i{font:700 46px 'Cormorant Garamond',serif;color:var(--m2);font-style:normal;grid-row:span 3}
+.use h3{font-size:30px;color:var(--m)}.use p{margin:0}
+.use .en{margin-top:4px}
+.scale{background:var(--m);border-radius:18px;padding:34px 24px 26px;margin:20px 0}
+.track{position:relative;height:14px;background:#6b3a47;border-radius:9px;margin:64px 6px 56px}
+.fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,#C9B8A6,#F1E9DB);border-radius:9px;transition:width 2.4s cubic-bezier(.2,.7,.2,1)}
+.mk{position:absolute;transform:translateX(-50%);color:var(--b);font:600 15px Manrope;white-space:nowrap;text-align:center}
+.mk.u{bottom:22px}.mk.d{top:22px;color:#C9B8A6}
+.mk::after{content:"";position:absolute;left:50%;width:2px;height:14px;background:#C9B8A6}
+.mk.u::after{top:100%}.mk.d::after{bottom:100%}
+.pc{display:flex;justify-content:space-between;color:#C9B8A6;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 22px}
+.chips span{background:var(--b2);border:2px solid var(--gl);border-radius:99px;padding:6px 18px;font-weight:600;transition:.2s}
+.chips span:hover{background:var(--m2);color:#fff;border-color:var(--m2);transform:scale(1.06)}
+.state{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.card{background:var(--b2);border-radius:18px;padding:22px 24px;position:relative;cursor:pointer;border:2px solid transparent;transition:.25s}
+.card:hover{border-color:var(--g)}
+.card h3{font-size:32px;color:var(--m)}.card .tag{font-size:14px;color:var(--g);font-weight:800}
+.card .f2{display:none}.card.flip .f1{display:none}.card.flip .f2{display:block;animation:pop .35s}
+.card.flip{background:var(--m);color:var(--b)}.card.flip h3,.card.flip .en{color:var(--b)}.card.flip .ru{color:#C9B8A6}.card.flip .tag{color:#C9B8A6}
+.hint{position:absolute;right:18px;top:18px;font-size:14px;font-weight:600;color:var(--g)}.card.flip .hint{color:#C9B8A6}
+@keyframes pop{from{opacity:0;transform:rotateX(70deg)}to{opacity:1;transform:none}}
+.s1{background:var(--m);color:var(--b);border-radius:18px;padding:22px 26px;margin:14px 0}.s1 .en{color:var(--b)}.s1 .ru{color:#C9B8A6}
+.s1 h3{color:#fff;font-size:30px;margin-bottom:6px}
+.s1 .chips span{background:transparent;border-color:#8a5563;color:var(--b)}
+footer{text-align:center;padding:56px 16px;color:var(--g);font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600}
+@media(max-width:560px){.use{grid-template-columns:1fr}.use i{grid-row:auto}.mk{font-size:12px}.hint{position:static;display:block}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+a:focus-visible,.card:focus-visible{outline:3px solid var(--m2);outline-offset:2px}
+.dot{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#F1E9DB;animation:pulse 1.8s infinite}@keyframes pulse{from{box-shadow:0 0 0 0 rgba(241,233,219,.7)}to{box-shadow:0 0 0 28px rgba(241,233,219,0)}}
+td.c{font-size:.85em;color:#6b5e60}
+.bar{position:sticky;top:0;z-index:9}nav{position:static}#tabs a{font-size:18px;padding:8px 22px}#sub{background:#3a1520;padding:6px 12px}#sub a{font-size:15px;color:#DCE3E8}
+section{scroll-margin-top:120px}.pn{display:none}.pn.on{display:block}
+.ring{width:min(460px,86vw);height:min(460px,86vw)}.ring h1{font-size:clamp(38px,7.5vw,66px)}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin:14px 0}
+.duo>div{border-radius:18px;padding:24px 26px;color:var(--b)}.duo .a{background:var(--m)}.duo .b{background:var(--g)}
+.duo h3{color:#fff;font-size:36px;margin-bottom:6px}.duo .en{color:#fff}.duo .chips span{background:transparent;border-color:rgba(241,233,219,.5);color:var(--b)}
+.duo p{margin:6px 0}
+.q{background:var(--b2);border-radius:18px;padding:18px 24px;margin:12px 0}.q .en{margin-bottom:10px}
+.q button{font:600 18px Manrope,sans-serif;border:2px solid var(--g);background:transparent;color:var(--m);border-radius:99px;padding:8px 20px;margin:4px 8px 4px 0;cursor:pointer;transition:.2s}
+.q button:hover{background:var(--gl)}.q button.ok{background:#3E6B4F;color:#fff;border-color:#3E6B4F}.q button.no{background:var(--m2);color:#fff;border-color:var(--m2)}
+.q p{margin:8px 0 0;display:none}.q.done p{display:block}
+.chips span.ex{background:var(--m2);color:#fff;border-color:var(--m2)}
+#tip{position:fixed;display:none;z-index:99;max-width:280px;background:var(--ink);color:var(--b);padding:10px 14px;border-radius:12px;font:600 17px/1.35 Manrope,sans-serif;box-shadow:0 8px 24px rgba(43,31,34,.4);pointer-events:none}
+#tip span{display:block;margin-top:4px;font-weight:400;font-size:15px;color:#C9B8A6}
+.chips span{cursor:help}
+</style></head><body>
+
+<header class="hero"><div class="ring">
+<svg viewBox="0 0 400 400"><defs><path id="c" d="M200,200 m-176,0 a176,176 0 1,1 352,0 a176,176 0 1,1 -352,0"/></defs>
+<text><textPath href="#c">always · now · usually · at the moment · every day · currently · often · these days · as a rule · still · never · right now ·</textPath></text></svg>
+<h1>Present Simple<br>&amp;<br>Continuous</h1></div></header>
+<div class="bar"><nav id="tabs"><a href="#" data-k="s">Present Simple</a><a href="#" data-k="c">Present Continuous</a><a href="#" data-k="t">State verbs</a><a href="#" data-k="x">Сравнение</a></nav><nav id="sub"></nav></div>
+<main class="pn on" id="p-s"><section id="s-form"><h2>Форма</h2>
+<p class="lead">Глагол в начальной форме, а для he / she / it добавляем <b class="k">-s</b>.</p>
+<table><tr><th></th><th>I / you / we / they</th><th>he / she / it</th></tr>
+<tr><td>+</td><td class="en">I work</td><td class="en">She works</td></tr>
+<tr><td>−</td><td class="en">I don't work</td><td class="en">She doesn't work</td></tr>
+<tr><td>?</td><td class="en">Do you work?</td><td class="en">Does she work?</td></tr>
+<tr><td>Кратко</td><td class="en">Yes, I do. / No, I don't.</td><td class="en">Yes, she does. / No, she doesn't.</td></tr></table>
+<div class="box w"><b>Только один -s.</b> Он уже в does, поэтому после doesn't и does глагол без окончания: <span class="en">She doesn't work</span>, а не <s>doesn't works</s>.</div>
+<div class="box"><b>Вопрос к подлежащему</b> строится без do/does: <span class="en">Who lives here? What happens next?</span> Глагол be и модальные глаголы обходятся без do: <span class="en">Is she in? Can he swim?</span> (модальные без -s). Отрицательные вопросы: <span class="en">Don't you know? Why doesn't he call?</span></div>
+<h3 style="font-size:34px;margin:26px 0 8px;color:var(--m)">Как пишется -s</h3>
+<div class="pron">
+<div><span class="en">work → works</span>обычное +s (play → plays: гласная + y)</div>
+<div><span class="en">watch → watches</span>+es после s, sh, ch, x, z, o (go → goes, do → does)</div>
+<div><span class="en">study → studies</span>согласная + y → ies</div>
+<div><span class="en">have → has</span><span class="en">be → am / is / are</span></div></div>
+<h3 style="font-size:34px;margin:26px 0 8px;color:var(--m)">Как произносится -s</h3>
+<div class="pron">
+<div><span class="en">/s/</span>после глухих: works, stops, laughs</div>
+<div><span class="en">/z/</span>после звонких и гласных: lives, plays, knows</div>
+<div><span class="en">/ɪz/</span>после s, z, sh, ch, j, x: watches, misses, changes</div>
+<div><span class="en">does /dʌz/, says /sez/</span>исключения — запоминаем</div></div></section><section id="s-uses"><h2>10 значений</h2>
+<p class="lead">Одна форма, много задач. Подсказка: смотрим, о чём говорим — о фактах, расписании или пересказе.</p>
+<div class="uses" id="s-ul"></div></section><section id="s-markers"><h2>Маркеры</h2>
+<p class="lead">Слова-сигналы, которые подсказывают Present Simple. Наведите на слово (на телефоне нажмите), чтобы увидеть перевод.</p>
+<div class="scale"><div class="track"><div class="fill" id="s-fill"></div></div><div class="pc"><span>0%</span><span>как часто это происходит</span><span>100%</span></div></div>
+<div class="box"><b>Где стоит наречие частоты:</b> перед смысловым глаголом и после am / is / are.
+<div class="en">She <b class="k">usually</b> walks to work. He is <b class="k">never</b> late.</div>
+С do/does наречие стоит перед глаголом: <span class="en">I don't often eat out.</span> Вопрос: <span class="en">Do you ever feel nervous?</span><br>
+<span class="ru">Sometimes, usually, often, normally, occasionally могут стоять в начале или в конце: <i>Sometimes I walk.</i> А вот never, rarely, seldom, hardly ever в конце фразы не ставим.</span></div>
+<h3 style="font-size:34px;margin:22px 0 4px;color:var(--m)">Повторяемость</h3>
+<div class="chips" id="s-c1"></div>
+<h3 style="font-size:34px;margin:22px 0 4px;color:var(--m)">Время и расписание</h3>
+<div class="chips" id="s-c2"></div>
+<h3 style="font-size:34px;margin:22px 0 4px;color:var(--m)">Пересказ, обзоры, факты</h3>
+<div class="chips" id="s-c3"></div>
+<div class="box w"><b>Если always раздражает</b>, нужен Present Continuous: <span class="en">He's always leaving his things everywhere!</span> А спокойная привычка — Present Simple: <span class="en">He always leaves at eight.</span></div><div class="box"><b>State verbs.</b> Глаголы состояния почти всегда стоят в Simple. <a href="#" onclick="show('t');return false" style="color:var(--m2);font-weight:800">Открыть вкладку State verbs</a></div></section></main><main class="pn" id="p-c"><section id="c-form"><h2>Форма</h2>
+<p class="lead">Глагол be (am / is / are) и смысловой глагол с <b class="k">-ing</b>.</p>
+<table><tr><th></th><th>I</th><th>he / she / it</th><th>you / we / they</th></tr>
+<tr><td>+</td><td class="en">I'm working</td><td class="en">She's working</td><td class="en">They're working</td></tr>
+<tr><td>−</td><td class="en">I'm not working</td><td class="en">She isn't working</td><td class="en">They aren't working</td></tr>
+<tr><td>?</td><td class="en">Am I working?</td><td class="en">Is she working?</td><td class="en">Are they working?</td></tr>
+<tr><td>Кратко</td><td class="c en">Yes, I am. / No, I'm not.</td><td class="c en">Yes, she is. / No, she isn't.</td><td class="c en">Yes, they are. / No, they aren't.</td></tr></table>
+<div class="box w"><b>Спрягается только be.</b> Смысловой глагол всегда с -ing и без -s: <span class="en">She is working</span>, а не <s>She is works</s>. Пропускать be тоже нельзя: <s>She working</s>.</div>
+<div class="box"><b>Вопрос к подлежащему</b> без вспомогательной перестановки: <span class="en">Who is calling? What's happening?</span> Отрицательные вопросы: <span class="en">Aren't you coming? Why isn't he answering?</span> Про себя: <span class="en">Aren't I right?</span> (amn't не бывает).</div>
+<h3 style="font-size:34px;margin:26px 0 8px;color:var(--m)">Как пишется -ing</h3>
+<div class="pron">
+<div><span class="en">work → working</span>просто +ing (study → studying: y остаётся)</div>
+<div><span class="en">make → making</span>немое e пропадает (write → writing), но be → being, see → seeing</div>
+<div><span class="en">stop → stopping</span>удваиваем согласную после краткой ударной гласной (sit → sitting, begin → beginning, prefer → preferring); travel → travelling (BrE)</div>
+<div><span class="en">lie → lying</span>ie → y (die → dying, tie → tying)</div></div>
+<h3 style="font-size:34px;margin:26px 0 8px;color:var(--m)">Как произносится</h3>
+<div class="pron">
+<div><span class="en">/ɪŋ/</span>working /ˈwɜːkɪŋ/: в конце один носовой звук, отдельного /g/ нет</div>
+<div><span class="en">/ə/</span>What are you doing? Здесь are слабое, почти /ə/</div>
+<div><span class="en">I'm /aɪm/, she's /ʃiːz/</span>сокращения звучат слитно с подлежащим: they're /ðeə/, isn't /ˈɪznt/</div>
+<div><span class="en">WORking</span>ударение на смысловом глаголе, -ing слабое</div></div></section><section id="c-uses"><h2>10 значений</h2>
+<p class="lead">Общая идея одна: действие в развитии, оно не завершено и связано с «сейчас».</p>
+<div class="uses" id="c-ul"></div></section><section id="c-markers"><h2>Маркеры</h2>
+<p class="lead">Слова-сигналы, которые подсказывают Present Continuous. Наведите на слово (на телефоне нажмите), чтобы увидеть перевод.</p>
+<div class="scale"><div class="track"><div class="fill" id="c-fill"></div><div class="dot"></div></div><div class="pc"><span>раньше</span><span>сейчас</span><span>потом</span></div></div>
+<h3 style="font-size:34px;margin:22px 0 4px;color:var(--m)">Прямо сейчас</h3><div class="chips" id="c-c1"></div>
+<h3 style="font-size:34px;margin:22px 0 4px;color:var(--m)">Период вокруг «сейчас»</h3><div class="chips" id="c-c2"></div>
+<h3 style="font-size:34px;margin:22px 0 4px;color:var(--m)">Изменения и рост</h3><div class="chips" id="c-c3"></div>
+<h3 style="font-size:34px;margin:22px 0 4px;color:var(--m)">Планы</h3><div class="chips" id="c-c4"></div>
+<h3 style="font-size:34px;margin:22px 0 4px;color:var(--m)">Раздражение или умиление</h3><div class="chips" id="c-c5"></div>
+<div class="box"><b>Где стоят наречия:</b> still и just идут после am / is / are, always и constantly между be и -ing.
+<div class="en">She is <b class="k">still</b> sleeping. I'm <b class="k">just</b> leaving. He's <b class="k">always</b> losing his keys.</div>
+<span class="ru">Look!, Listen!, Watch out!, Be quiet! и Hurry up! ставятся в начале и сразу указывают на действие, которое идёт на глазах.</span></div><div class="box"><b>State verbs.</b> Глаголы состояния обычно не ставим в Continuous. <a href="#" onclick="show('t');return false" style="color:var(--m2);font-weight:800">Открыть вкладку State verbs</a></div></section></main><main class="pn" id="p-t"><section id="t-all"><h2>Полный список</h2><p class="lead">Все основные глаголы состояния по группам. Наведите на слово (на телефоне нажмите), чтобы увидеть перевод. <b class="k">Тёмным</b> выделены те, у которых есть значение-действие и допустим Continuous (разбор ниже). Остальные почти всегда стоят без -ing. Отдельно: <b>be</b> и <b>do</b> тоже меняют смысл, см. «Два значения».</p><h3 style="font-size:30px;margin:18px 0 2px;color:var(--m)">Мышление и мнение</h3><div class="chips"><span class="">know</span><span class="">believe</span><span class="ex">think</span><span class="ex">understand</span><span class="ex">realize</span><span class="">recognize</span><span class="">remember</span><span class="">forget</span><span class="">doubt</span><span class="ex">suppose</span><span class="ex">imagine</span><span class="">mean</span><span class="">agree</span><span class="">disagree</span><span class="">assume</span><span class="">suspect</span><span class="">trust</span><span class="">guess</span><span class="ex">expect</span><span class="ex">wonder</span></div><h3 style="font-size:30px;margin:18px 0 2px;color:var(--m)">Чувства и желания</h3><div class="chips"><span class="ex">like</span><span class="ex">love</span><span class="">hate</span><span class="">dislike</span><span class="">prefer</span><span class="">want</span><span class="">need</span><span class="">wish</span><span class="ex">hope</span><span class="">adore</span><span class="">detest</span><span class="ex">enjoy</span><span class="ex">admire</span><span class="">appreciate</span><span class="">care</span><span class="">envy</span><span class="">fear</span><span class="ex">regret</span></div><h3 style="font-size:30px;margin:18px 0 2px;color:var(--m)">Восприятие и впечатление</h3><div class="chips"><span class="ex">see</span><span class="ex">hear</span><span class="ex">smell</span><span class="ex">taste</span><span class="ex">feel</span><span class="">sound</span><span class="ex">look</span><span class="">seem</span><span class="ex">appear</span></div><h3 style="font-size:30px;margin:18px 0 2px;color:var(--m)">Обладание, состав, связи</h3><div class="chips"><span class="ex">have</span><span class="">own</span><span class="">possess</span><span class="">belong</span><span class="">contain</span><span class="">include</span><span class="">consist of</span><span class="">involve</span><span class="">lack</span><span class="">owe</span><span class="ex">cost</span><span class="ex">weigh</span><span class="ex">measure</span><span class="">matter</span><span class="">depend on</span><span class="">deserve</span><span class="">resemble</span><span class="">equal</span><span class="">fit</span><span class="">exist</span><span class="">differ</span></div><h3 style="font-size:30px;margin:18px 0 2px;color:var(--m)">Воздействие на человека</h3><div class="chips"><span class="">please</span><span class="">satisfy</span><span class="">surprise</span><span class="">impress</span><span class="">concern</span><span class="">astonish</span></div></section>
+<section id="t-a"><h2>Почти всегда Simple</h2>
+<p class="lead">Глаголы состояния описывают, что есть, а не что происходит, поэтому обычно стоят в Present Simple. Многие из них меняют смысл, и тогда Continuous допустим.</p>
+<div class="s1" id="t-st1"></div></section>
+<section id="t-b"><h2>Иногда с -ing</h2><div class="s1" id="t-st2"></div></section>
+<section id="t-c"><h2>Два значения</h2>
+<p class="lead">Нажмите на карточку, чтобы увидеть значение в Continuous.</p><div class="state" id="t-st3"></div></section></main><main class="pn" id="p-x"><section id="x-idea"><h2>Главное отличие</h2>
+<p class="lead">Simple отвечает на вопрос «как обычно?», Continuous — «что происходит?».</p>
+<div class="duo"><div class="a"><h3>Present Simple</h3><p>Факт, привычка, порядок вещей. Смотрим на ситуацию целиком, как на картинку.</p><p><b>V / V-s</b></p><p class="en">She works at a bank.</p></div>
+<div class="b"><h3>Present Continuous</h3><p>Процесс, который идёт, временное, меняющееся. Смотрим изнутри, в самый разгар.</p><p><b>am / is / are + V-ing</b></p><p class="en">She's working on a report.</p></div></div></section>
+<section id="x-vals"><h2>По значениям</h2>
+<table><tr><th>Значение</th><th>Simple</th><th>Continuous</th></tr>
+<tr><td>Привычка и процесс</td><td class="en">She reads a lot.</td><td class="en">She's reading a novel now.</td></tr>
+<tr><td>Постоянное и временное</td><td class="en">He lives in Kyiv.</td><td class="en">He's living in Kyiv for now.</td></tr>
+<tr><td>Закономерность и изменение</td><td class="en">Prices rise in winter.</td><td class="en">Prices are rising.</td></tr>
+<tr><td>Расписание и договорённость</td><td class="en">The train leaves at 7:45.</td><td class="en">I'm leaving at eight.</td></tr>
+<tr><td>Мнение и обдумывание</td><td class="en">I think it's a good idea.</td><td class="en">I'm thinking about it.</td></tr>
+<tr><td>Характер и поведение сейчас</td><td class="en">He is silly.</td><td class="en">He is being silly!</td></tr>
+<tr><td>Нейтрально и с эмоцией</td><td class="en">He always leaves at eight.</td><td class="en">He's always leaving the light on!</td></tr>
+<tr><td>Утверждение и смягчение</td><td class="en">I hope you can help.</td><td class="en">I'm hoping you can help.</td></tr>
+<tr><td>Сюжет и картинка</td><td class="en">In the film, the hero escapes.</td><td class="en">In the picture, a man is running.</td></tr>
+<tr><td>Владение и действие (have)</td><td class="en">Do you have a car?</td><td class="en">We're having lunch.</td></tr></table></section>
+<section id="x-mk"><h2>Маркеры рядом</h2><p class="lead">Наведите на слово (на телефоне нажмите), чтобы увидеть перевод.</p>
+<div class="duo"><div class="a"><h3>Simple</h3><div class="chips" id="x-c1"></div></div><div class="b"><h3>Continuous</h3><div class="chips" id="x-c2"></div></div></div>
+<div class="box w"><b>Слова, которые работают в обоих:</b> always, today, this week, tonight, tomorrow. Решает смысл.
+<div class="en">He always leaves at eight. / He's always leaving the light on!<br>The train leaves tomorrow at 7. / I'm leaving tomorrow.</div></div></section>
+<section id="x-quiz"><h2>Проверь себя</h2><p class="lead">Выберите форму. Ответ и объяснение появятся сразу.</p><div id="x-q"></div></section></main><footer>voronovaschool</footer>
+<script>
+(function(){const $=id=>document.getElementById('s-'+id);
+const U=[
+["Привычки и повторяющиеся действия","Регулярное, то, что происходит снова и снова.","I take the bus to work every day."],
+["Постоянные состояния и факты","Где живёт, кто такой, какой по природе.","She lives in Tyumen. This house is over 100 years old."],
+["Общие истины и законы","То, что верно всегда, включая научные факты.","Water boils at 100°C. Fresh fruit contains a range of vitamins."],
+["Расписания и программы (будущее)","Официальное, фиксированное: транспорт, сеансы, курсы. Личные планы — это Continuous: I'm meeting Anna at six.","The train leaves at 7:45. The course starts on Monday."],
+["После when, if, as soon as, until, before, after, once, unless","В придаточных времени и условия будущее не выражаем через will.","When she arrives, we'll start. I'll wait until you finish."],
+["Инструкции, рецепты, маршруты","Последовательность действий в настоящем времени.","First you chop the onions, then you add the garlic."],
+["Прямой комментарий","Спорт, демонстрация, показ: действие происходит на глазах.","He passes to Alba, Alba shoots, and he scores!"],
+["Сюжеты, заголовки, анекдоты","Пересказ фильма и книги, газетные заголовки, живой рассказ (historic present).","In the film, the hero escapes and returns home. PRESIDENT RESIGNS. So this man walks into a bar..."],
+["Речь и реакции: слышу, вижу, обещаю","Глаголы сообщения и речевые акты, где само высказывание и есть действие. Сюда же I hear / I gather / They say / It says here.","I hear you've had your hair cut. I promise I'll call. I apologise. I suggest we leave."],
+["Усиление и «вот и…»","Do усиливает: I do like it! Do sit down. А here / there с глаголом движения даёт живую сцену.","Here comes the bus! There goes my chance!"]];
+$('ul').innerHTML=U.map((u,i)=>`<div class="use"><i>${i+1}</i><h3>${u[0]}</h3><p>${u[1]}</p><p class="en">${u[2]}</p></div>`).join('');
+
+const M={c1:"always·usually·normally·generally·often·frequently·sometimes·occasionally·seldom·rarely·hardly ever·never·ever (в вопросах)·every day / week / year·most days·as a rule·from time to time·now and then·every so often",
+c2:"once a week·twice a month·three times a year·on Mondays·at weekends·in the morning·at night·at 7 o'clock·every Friday·each term·on Sundays·the train leaves at·the film starts at",
+c3:"the book says·it says here·in the film·in the article·the story begins·I hear·I gather·they say·apparently·as I understand it"};
+for(const k in M)$(k).innerHTML=M[k].split('·').map(t=>`<span>${t}</span>`).join('');
+[["always",100],["usually",88],["often",72],["sometimes",50],["occasionally",30],["rarely",14],["never",0]].forEach(([w,p],i)=>{
+$('fill').parentNode.insertAdjacentHTML('beforeend',`<span class="mk ${i%2?'d':'u'}" style="left:${p}%">${w}</span>`)});
+const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){$('fill').style.width='100%'}},{threshold:.6});io.observe($('fill'));
+
+
+
+})();
+(function(){const $=id=>document.getElementById('c-'+id);
+const U=[
+["Действие прямо сейчас","То, что происходит в момент речи. Часто с Look!, Listen!, now.","Look! It's snowing. Be quiet, the baby is sleeping."],
+["Временная ситуация","Не навсегда: сейчас, в эти дни, пока так сложилось.","I'm staying with a friend until I find a flat. She's working nights this month."],
+["Временная привычка","Повторяется, но только в ограниченный период. Постоянная привычка — Simple.","I'm taking the bus this week; my car is in the garage."],
+["Процесс вокруг «сейчас»","Дело начато и не закончено, хотя в эту секунду им можно и не заниматься.","I'm reading a great book. He's writing his thesis. She's learning to drive."],
+["Меняющиеся ситуации и тренды","Что-то растёт, падает, развивается. Часто с get, become, grow, rise.","The climate is getting warmer. More and more people are working from home. People are slowly realizing the cost of global warming."],
+["Договорённости о ближайшем будущем","Есть время, место, билеты, люди. Расписание — это Simple: The train leaves at 7:45.","I'm meeting Anna at six. We're flying to Rome on Friday."],
+["Раздражение или умиление: always, constantly","Повторяется слишком часто, и мы это оцениваем. Эмоция может быть и тёплой.","He's always leaving dirty cups in the sink! She's constantly helping everyone."],
+["Вежливость и смягчение","Continuous делает фразу мягче и менее категоричной. Типично для писем и звонков.","I'm writing to apply for the post. I'm calling about your order. We're hoping to continue the talks next week."],
+["Описание картинки и живой рассказ","Что происходит в кадре; анекдоты и истории разговорным тоном (фоновые действия).","In the picture, two children are playing on the beach. So I'm walking down the street and this guy comes up to me..."],
+["Два действия одновременно","Оба идут в один и тот же момент, часто со словом while.","While I'm cooking, he's setting the table."]];
+$('ul').innerHTML=U.map((u,i)=>`<div class="use"><i>${i+1}</i><h3>${u[0]}</h3><p>${u[1]}</p><p class="en">${u[2]}</p></div>`).join('');
+const M={c1:"now·right now·at the moment·at present·currently·just (I'm just leaving)·still·Look!·Listen!·Watch out!·Be quiet!·Hurry up!·for the time being·temporarily",
+c2:"today·this week·this month·this year·these days·nowadays·this term·for now·at the moment",
+c3:"more and more·increasingly·gradually·slowly·steadily·rapidly·getting·becoming·growing·rising·changing",
+c4:"tonight·tomorrow·this weekend·next Friday·on Saturday·in June·soon",
+c5:"always·constantly·forever·continually·all the time·again and again"};
+for(const k in M)$(k).innerHTML=M[k].split('·').map(t=>`<span>${t}</span>`).join('');
+[["these days",14,"u"],["this week",30,"d"],["now / at the moment",50,"u"],["still",64,"d"],["tomorrow (plans)",84,"u"]].forEach(([w,p,c])=>{
+$('fill').parentNode.insertAdjacentHTML('beforeend',`<span class="mk ${c}" style="left:${p}%">${w}</span>`)});
+new IntersectionObserver(e=>{if(e[0].isIntersecting)$('fill').style.width='50%'},{threshold:.6}).observe($('fill'));
+
+})();
+(function(){const $=id=>document.getElementById('t-'+id);
+const chip=a=>a.map(t=>`<span>${t}</span>`).join('');
+$('st1').innerHTML=`<div class="chips">${chip(['belong','consist of','contain','cost','depend on','deserve','matter','own','possess','resemble'])}</div>
+<div class="en">Does this belong to you? Fresh fruit contains a range of vitamins.</div>
+<div class="chips">${chip(['believe','imagine','know','prefer','realize','understand','mean'])}</div>
+<div class="en">Some people still believe that the Earth is flat.</div>
+<div class="chips">${chip(['seem'])}</div><div class="en">This seems to be what we're looking for.</div>`;
+$('st2').innerHTML=`<p><b>cost</b>: иногда Continuous, когда процесс ещё идёт.</p><div class="en">We're having a house built, and it's costing a fortune!</div>
+<p><b>realize, regret, understand</b>: Continuous показывает, что ситуация меняется.</p>
+<div class="en">Some people don't realize how dangerous cars can be.<br>People are slowly realizing the cost of global warming.<br>Do you understand this point?<br>We're understanding more and more about the universe.</div>
+<p><b>see, hear</b> в значении «узнаю, до меня дошло»:</p><div class="en">I see / hear you've had your hair cut. I didn't hear any noises.</div>`;
+
+const S=[
+["do","Simple","What do you do?","Кем работаешь?","What are you doing?","Что ты сейчас делаешь? (объясни свои действия)"],
+["be","Simple","This house is over 100 years old.","Факт.","He is being very silly!","Ведёт себя глупо, сейчас."],
+["have","Simple","Do you have a car?","Владение.","I'm having a great time here.","Проводить время. Во многих выражениях have — action verb: have breakfast, have a shower, have a look."],
+["suppose · imagine · expect","Simple","I suppose this is Jim. I imagine you feel the same. I don't expect him to understand.","Полагаю, представляю, ожидаю (мнение).","You're supposing he is guilty. — Ghosts? No, you're imagining things!<br>Are you expecting someone?","Делаешь предположение; выдумываешь; ждёшь кого-то в данный момент."],
+["think","Simple","What do you think?","Какое у тебя мнение?","What are you thinking? — I'm thinking of changing jobs.","Размышлять."],
+["hope · wonder","Simple","I hope you haven't been waiting long.","Надеюсь (состояние).","We're hoping to continue the talks next week.","«Активно» надеемся, почти молимся, надежда влияет на действия."],
+["enjoy · like · love","Simple","I enjoy / love going for long walks.","Обычно state.","Are you enjoying the party? I'm loving every minute of my new job!","Действие, которое идёт прямо сейчас."],
+["appear","Simple","Your visa appears to be out of date.","Кажется, по-видимому.","Tom is appearing in Hamlet at the Grand Theatre.","Принимать участие, выступать."],
+["look","Simple / Cont.","This book looks interesting (= seems). Jim looks ill.","Выглядит, кажется.","Helen is looking well.","Описание внешности: подходят и Simple, и Continuous."],
+["feel · smell · taste · see · hear","Simple","The room smells awful!","Иметь запах.","I'm smelling the flowers! Jane is seeing Harry. You're hearing things!","Нюхать, ощущать запах; встречаться с кем-то (= spending time with); тебе мерещится (= imagining)."],
+["weigh · measure","Simple","This bag weighs more than 25 kilos.","Весить.","I'm weighing the parcel before I post it.","Взвешивать."],
+["admire","Simple","I admire Tom's honesty.","Восхищаться (качеством).","I'm admiring the moon.","Любоваться."]];
+$('st3').innerHTML=S.map(s=>`<div class="card" tabindex="0" role="button"><span class="hint">нажми →</span>
+<div class="f1"><span class="tag">STATE · Simple</span><h3>${s[0]}</h3><p class="en">${s[2]}</p><p class="ru">${s[3]}</p></div>
+<div class="f2"><span class="tag">ACTION · Continuous</span><h3>${s[0]}</h3><p class="en">${s[4]}</p><p class="ru">${s[5]}</p></div></div>`).join('');
+document.querySelectorAll('.card').forEach(c=>{const t=()=>c.classList.toggle('flip');c.onclick=t;c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}}});
+
+
+})();
+(function(){
+const set=(id,s)=>document.getElementById(id).innerHTML=s.split('·').map(t=>`<span>${t}</span>`).join('');
+set('x-c1',"always·usually·often·sometimes·rarely·never·every day·once a week·on Mondays·at weekends·as a rule·from time to time");
+set('x-c2',"now·right now·at the moment·currently·these days·this week·still·nowadays·more and more·Look!·Listen!");
+const Q=[["Look! The bus","."," comes","is coming","C","Look! — действие на глазах."],
+["She","to work every day.","walks","is walking","S","Every day — привычка."],
+["The train","at 7:45.","leaves","is leaving","S","Расписание — Simple."],
+["I","Anna at six; we've booked a table.","meet","'m meeting","C","Договорённость: время и место известны."],
+["Water","at 100°C.","boils","is boiling","S","Научный факт."],
+["Prices","all over the country.","rise","are rising","C","Процесс, изменение."],
+["He","the light on! It drives me mad.","always leaves","is always leaving","C","Раздражение выражаем через Continuous."],
+["I","the answer.","know","am knowing","S","Know — state verb."],
+["— What are you thinking about? — I","about my holiday.","think","'m thinking","C","Think в значении «размышлять» — действие."],
+["When she",", we'll start.","arrives","is arriving","S","После when вместо will — Present Simple."]];
+const box=document.getElementById('x-q');let sc=0,n=0;
+box.innerHTML=Q.map((q,i)=>`<div class="q"><div class="en">${q[0]} <b>___</b> ${q[1]}</div><button data-i="${i}" data-a="S">${q[2].trim()}</button><button data-i="${i}" data-a="C">${q[3]}</button><p class="ru">${q[5]}</p></div>`).join('')+'<div class="en" id="x-sc"></div>';
+box.onclick=e=>{const b=e.target.closest('button');if(!b)return;const q=b.parentNode;if(q.classList.contains('done'))return;q.classList.add('done');const c=Q[b.dataset.i][4];
+q.querySelectorAll('button').forEach(x=>{if(x.dataset.a===c)x.classList.add('ok')});n++;if(b.dataset.a===c)sc++;else b.classList.add('no');
+document.getElementById('x-sc').textContent='Результат: '+sc+' из '+n}})();
+let cur='s';
+function spy(){const y=scrollY+150,l=[...document.querySelectorAll('#sub a')];let c=0;[...document.querySelectorAll('#p-'+cur+' section')].forEach((s,i)=>{if(s.offsetTop<=y)c=i});l.forEach((a,i)=>a.classList.toggle('on',i===c))}
+function show(k,init){cur=k;document.querySelectorAll('.pn').forEach(p=>p.classList.toggle('on',p.id==='p-'+k));
+document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on',a.dataset.k===k));
+document.getElementById('sub').innerHTML=[...document.querySelectorAll('#p-'+k+' section')].map(s=>`<a href="#${s.id}">${s.querySelector('h2').textContent}</a>`).join('');
+if(!init)scrollTo({top:document.querySelector('.hero').offsetHeight});spy()}
+document.querySelectorAll('#tabs a').forEach(a=>a.onclick=e=>{e.preventDefault();show(a.dataset.k)});
+addEventListener('scroll',spy);show('s',true);
+(function(){
+const D={};
+`always|всегда
+usually|обычно
+normally|как правило, обычно
+generally|в целом, как правило
+often|часто
+frequently|часто, регулярно
+sometimes|иногда
+occasionally|время от времени
+seldom|редко
+rarely|редко
+hardly ever|почти никогда
+never|никогда
+ever|когда-либо (в вопросах)
+every day / week / year|каждый день / неделю / год
+every day|каждый день
+most days|почти каждый день
+as a rule|как правило
+from time to time|время от времени
+now and then|время от времени
+every so often|время от времени, иногда
+once a week|раз в неделю
+twice a month|дважды в месяц
+three times a year|три раза в год
+on mondays|по понедельникам
+at weekends|по выходным
+in the morning|утром
+at night|ночью
+at 7 o'clock|в 7 часов
+every friday|каждую пятницу
+each term|каждый семестр
+on sundays|по воскресеньям
+the train leaves at|поезд отправляется в
+the film starts at|фильм начинается в
+the book says|в книге говорится
+it says here|здесь сказано
+in the film|в фильме
+in the article|в статье
+the story begins|история начинается
+i hear|я слышал, до меня дошло
+i gather|насколько я понимаю
+they say|говорят
+apparently|судя по всему
+as i understand it|как я понимаю
+now|сейчас
+right now|прямо сейчас
+at the moment|в данный момент
+at present|в настоящее время
+currently|сейчас, в настоящее время
+just|как раз (I'm just leaving — я как раз ухожу)
+still|всё ещё
+look!|Смотри!
+listen!|Слушай!
+watch out!|Осторожно!
+be quiet!|Тише!
+hurry up!|Поторопись!
+for the time being|пока что, временно
+temporarily|временно
+today|сегодня
+this week|на этой неделе
+this month|в этом месяце
+this year|в этом году
+these days|в эти дни, нынче
+nowadays|в наши дни
+this term|в этом семестре
+for now|пока, на данный момент
+more and more|всё больше и больше
+increasingly|всё чаще, всё более
+gradually|постепенно
+slowly|медленно
+steadily|неуклонно, стабильно
+rapidly|быстро
+getting|становиться (it's getting warmer — теплеет)
+becoming|становиться
+growing|расти
+rising|расти, подниматься
+changing|меняться
+tonight|сегодня вечером
+tomorrow|завтра
+this weekend|в эти выходные
+next friday|в следующую пятницу
+on saturday|в субботу
+in june|в июне
+soon|скоро
+constantly|постоянно
+forever|вечно, без конца
+continually|непрерывно, всё время
+all the time|всё время
+again and again|снова и снова
+belong|принадлежать
+consist of|состоять из
+contain|содержать
+cost|стоить|обходиться, когда процесс ещё идёт (it's costing a fortune)
+depend on|зависеть от
+deserve|заслуживать
+matter|иметь значение
+own|владеть
+possess|обладать
+resemble|напоминать, быть похожим
+believe|верить, считать
+imagine|представлять, полагать|выдумывать (you're imagining things)
+know|знать
+prefer|предпочитать
+realize|осознавать|постепенно осознавать, ситуация меняется
+understand|понимать|понимать всё больше, ситуация меняется
+mean|означать, иметь в виду
+seem|казаться
+think|считать, полагать (мнение)|размышлять (I'm thinking of changing jobs)
+recognize|узнавать, признавать
+remember|помнить
+forget|забывать
+doubt|сомневаться
+suppose|полагать|делать предположение
+assume|предполагать
+suspect|подозревать
+trust|доверять
+guess|догадываться
+expect|ожидать, полагать|ждать кого-то прямо сейчас (Are you expecting someone?)
+wonder|интересоваться, гадать
+like|нравиться|действие, которое идёт в данный момент
+love|любить|наслаждаться прямо сейчас (I'm loving every minute)
+hate|ненавидеть
+dislike|не любить
+want|хотеть
+need|нуждаться, быть нужным
+wish|желать, хотеть
+hope|надеяться|«активно» надеяться, почти молиться (we're hoping to…)
+adore|обожать
+detest|терпеть не мочь
+enjoy|получать удовольствие|наслаждаться прямо сейчас (Are you enjoying the party?)
+admire|восхищаться|любоваться (I'm admiring the moon)
+appreciate|ценить
+care|заботиться, переживать
+envy|завидовать
+fear|бояться
+regret|сожалеть|ситуация меняется
+see|видеть, понимать|встречаться с кем-то (Jane is seeing Harry)
+hear|слышать|тебе мерещится (you're hearing things)
+smell|пахнуть|нюхать (I'm smelling the flowers)
+taste|иметь вкус|пробовать на вкус
+feel|чувствовать, ощущаться
+sound|звучать
+look|выглядеть, казаться|описание внешности: подходят и Simple, и Continuous
+appear|казаться, по-видимому|выступать (Tom is appearing in Hamlet)
+have|иметь, владеть|проводить время, есть, принимать (I'm having a great time)
+include|включать
+involve|включать в себя, вовлекать
+lack|не хватать
+owe|быть должным
+weigh|весить|взвешивать (I'm weighing the parcel)
+measure|иметь размер, измерять|замерять, измерять сейчас
+equal|равняться
+fit|подходить по размеру
+exist|существовать
+differ|отличаться
+please|радовать
+satisfy|удовлетворять
+surprise|удивлять
+impress|впечатлять
+concern|касаться, беспокоить
+astonish|поражать
+agree|соглашаться
+disagree|не соглашаться`.split('\n').forEach(l=>{const a=l.split('|');D[a[0]]=[a[1],a[2]]});
+const tip=document.createElement('div');tip.id='tip';document.body.appendChild(tip);
+const key=s=>s.toLowerCase().replace(/\s*\(.*?\)/g,'').trim(),sel='.chips span';let cur=null;
+function hide(){tip.style.display='none';cur=null}
+function show(el){const d=D[key(el.textContent)];if(!d){hide();return}
+tip.innerHTML='<b>'+d[0]+'</b>'+(d[1]?'<span>В Continuous: '+d[1]+'</span>':'');tip.style.display='block';
+const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+let x=Math.max(8,Math.min(innerWidth-w-8,r.left+r.width/2-w/2)),y=r.top-h-10;if(y<8)y=r.bottom+10;
+tip.style.left=x+'px';tip.style.top=y+'px';cur=el}
+document.addEventListener('mouseover',e=>{const s=e.target.closest(sel);if(s)show(s)});
+document.addEventListener('mouseout',e=>{if(e.target.closest(sel))hide()});
+document.addEventListener('focusin',e=>{const s=e.target.closest(sel);if(s)show(s)});
+document.addEventListener('focusout',hide);
+document.addEventListener('click',e=>{const s=e.target.closest(sel);if(s)show(s);else hide()});
+addEventListener('scroll',hide,{passive:true});
+document.querySelectorAll(sel).forEach(s=>s.tabIndex=0);
+})();
+</script></body></html>
