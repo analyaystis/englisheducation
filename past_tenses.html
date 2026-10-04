@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Past Simple & Past Continuous</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--m:#4A1A26;--m2:#7A2E40;--g:#5F7284;--gl:#DCE3E8;--b:#F1E9DB;--b2:#FBF7EF;--ink:#2B1F22}
+*{box-sizing:border-box}
+body{margin:0;background:var(--b);color:var(--ink);font:400 18px/1.65 Manrope,system-ui,sans-serif;padding:0 0 60px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;line-height:1.15;margin:0}
+header{background:var(--m);color:var(--b);text-align:center;padding:44px 20px 30px}
+header h1{font-size:clamp(32px,6vw,48px)}
+header p{font-family:Manrope,sans-serif;color:#C9B8A6;margin:8px 0 0;font-size:15px;letter-spacing:.5px}
+nav{display:flex;justify-content:center;gap:10px;background:var(--m);padding:0 20px 18px;flex-wrap:wrap}
+nav button{font-family:Manrope,sans-serif;font-weight:800;font-size:14px;letter-spacing:.3px;border:1.5px solid var(--b);background:transparent;color:var(--b);padding:9px 18px;border-radius:999px;cursor:pointer;transition:.15s}
+nav button.active{background:var(--b);color:var(--m)}
+main{max-width:800px;margin:0 auto;padding:0 20px}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+section{margin-top:44px}
+h2{font-size:clamp(26px,4vw,32px);color:var(--m);border-bottom:2px solid var(--m);padding-bottom:6px;margin-bottom:16px}
+h3{font-size:20px;color:var(--m2);margin:22px 0 8px}
+.ru{color:var(--g);font-size:.92em}
+.card{background:var(--b2);border:1px solid var(--gl);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+.form{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--m);margin-bottom:6px}
+table{width:100%;border-collapse:collapse;margin:10px 0 16px}
+td,th{border:1px solid var(--gl);padding:8px 10px;text-align:left;font-size:15px;vertical-align:top}
+th{background:var(--gl);color:var(--m);font-family:Manrope;font-weight:800}
+ul,ol{padding-left:22px;margin:0 0 10px}
+li{margin-bottom:10px}
+.ex{color:var(--m2);font-style:italic}
+.markers{background:var(--b2);border-left:4px solid var(--m2);border-radius:6px;padding:10px 14px;margin:8px 0 16px;font-size:16px}
+.note{background:#F6EADF;border-left:4px solid var(--g);border-radius:6px;padding:10px 14px;margin:8px 0 16px;font-size:15px;color:var(--ink)}
+footer{text-align:center;padding:50px 16px 10px;color:var(--g);font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600}
+.hint{font-family:Manrope,sans-serif;font-size:13px;color:var(--g);background:var(--b2);border-left:4px solid var(--m2);padding:8px 14px;border-radius:6px;margin-bottom:16px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.vcard{background:var(--b2);border:1px solid var(--gl);border-radius:10px;padding:12px 14px}
+.vcard .tr{color:var(--g);font-size:13px;margin-bottom:8px}
+.vrow{display:flex;align-items:baseline;gap:6px;margin-bottom:3px}
+.vlabel{font-size:11px;color:var(--g);width:16px;flex:none}
+.word{font-weight:700;color:var(--m);cursor:pointer;border-bottom:1px dashed var(--m2);user-select:none}
+.word .pr{display:none;color:var(--g);font-weight:400;font-style:italic;font-size:13px;margin-left:6px}
+.word.show .pr{display:inline}
+.hw{position:relative;border-bottom:1px dotted var(--g);cursor:help}
+.hw::after{content:attr(data-tr);position:absolute;left:50%;bottom:130%;transform:translateX(-50%);background:var(--m);color:var(--b);font-family:Manrope,sans-serif;font-size:13px;line-height:1.3;padding:6px 11px;border-radius:7px;white-space:nowrap;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s;z-index:10;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.hw:hover::after{opacity:1;visibility:visible}
+.badge{display:inline-block;font-family:Manrope,sans-serif;font-size:11px;font-weight:800;letter-spacing:.3px;color:var(--g);background:var(--gl);border-radius:5px;padding:2px 7px;margin-top:6px}
+</style></head>
+<body>
+
+<header>
+<h1>Past Simple &amp; Past Continuous</h1>
+<p>Формы, значения, маркеры, сравнение</p>
+</header>
+
+<nav>
+<button class="active" onclick="showTab('grammar',this)">Грамматика</button>
+<button onclick="showTab('verbs',this)">Неправильные глаголы</button>
+</nav>
+
+<main>
+
+<div id="tab-grammar" class="tab-panel active">
+
+<section>
+<h2>Past Simple</h2>
+<div class="form">V2 / V+ed</div>
+
+<table>
+<tr><th>Утверждение</th><th>Отрицание</th><th>Вопрос</th></tr>
+<tr><td>I worked. / I went.</td><td>I did not (didn't) work/go.</td><td>Did I work/go?</td></tr>
+</table>
+<div class="note">Правильные глаголы — +ed (worked). Неправильные — вторая форма из таблицы (go → went, see → saw). В отрицании и вопросе всегда голый инфинитив: did + go, НЕ did + went.</div>
+
+<h3>Маркеры времени</h3>
+<div class="markers">
+<span class="hw" data-tr="вчера">yesterday</span> · <span class="hw" data-tr="на прошлой неделе/в прошлом месяце/году">last week/month/year</span> · <span class="hw" data-tr="в 2015">in 2015</span> · <span class="hw" data-tr="назад">ago</span> · <span class="hw" data-tr="когда я был ребёнком">when I was a child</span> · <span class="hw" data-tr="на днях">the other day</span>
+</div>
+
+<h3>Значения</h3>
+<ol>
+<li><b>Законченное действие в прошлом</b> — факт, действие завершено.
+<div class="ex">I visited Paris in 2019. <span class="ru">(я посетила Париж в 2019)</span></div></li>
+<li><b>Последовательность действий</b> — одно за другим.
+<div class="ex">He woke up, had breakfast and left. <span class="ru">(он проснулся, позавтракал и ушёл)</span></div></li>
+<li><b>Прошлая привычка / повторяющееся действие</b> (можно заменить на used to).
+<div class="ex">I played football every weekend as a child. <span class="ru">(я играл в футбол каждые выходные в детстве)</span></div></li>
+<li><b>Состояние, длившееся в прошлом, но уже не актуальное</b>.
+<div class="ex">She lived in London for five years. <span class="ru">(она жила в Лондоне пять лет)</span></div></li>
+<li><b>Исторический факт</b>.
+<div class="ex">The war ended in 1945. <span class="ru">(война закончилась в 1945)</span></div></li>
+</ol>
+</section>
+
+<section>
+<h2>Past Continuous</h2>
+<div class="form">was/were + V-ing</div>
+
+<table>
+<tr><th>Местоимение</th><th>Утверждение</th><th>Отрицание</th><th>Вопрос</th></tr>
+<tr><td>I / he / she / it</td><td>I was working.</td><td>I wasn't working.</td><td>Was I working?</td></tr>
+<tr><td>we / you / they</td><td>We were working.</td><td>We weren't working.</td><td>Were we working?</td></tr>
+<tr><td>he</td><td>He was cooking dinner.</td><td>He wasn't cooking dinner.</td><td>Was he cooking dinner?</td></tr>
+<tr><td>they</td><td>They were watching a film.</td><td>They weren't watching a film.</td><td>Were they watching a film?</td></tr>
+</table>
+
+<h3>Маркеры времени</h3>
+<div class="markers">
+<span class="hw" data-tr="пока">while</span> · <span class="hw" data-tr="когда">when</span> · <span class="hw" data-tr="в то время как / как раз когда">as</span> · <span class="hw" data-tr="в тот момент">at that moment</span> · <span class="hw" data-tr="вчера в 5 часов">at 5 o'clock yesterday</span> · <span class="hw" data-tr="весь день/всю ночь">all day/night</span> · <span class="hw" data-tr="весь вечер">the whole evening</span> · <span class="hw" data-tr="постоянно — для раздражения">always</span>
+</div>
+
+<h3>Значения</h3>
+<ol>
+<li><b>Действие в процессе в конкретный момент прошлого</b>.
+<div class="ex">At 8 p.m. I was watching TV. <span class="ru">(в 8 вечера я смотрела телевизор)</span></div></li>
+<li><b>Фоновое действие, прерванное другим</b> (Past Continuous + Past Simple, связка when).
+<div class="ex">I was cooking dinner when the phone rang. <span class="ru">(я готовила ужин, когда зазвонил телефон)</span></div></li>
+<li><b>Два параллельных действия</b> (связка while).
+<div class="ex">While she was reading, he was cleaning the kitchen. <span class="ru">(пока она читала, он убирал кухню)</span></div></li>
+<li><b>Описание обстановки, "декораций" истории</b>.
+<div class="ex">It was raining and the wind was blowing. <span class="ru">(шёл дождь, дул ветер)</span></div></li>
+<li><b>Постепенное изменение / развитие</b>.
+<div class="ex">It was getting colder and colder. <span class="ru">(становилось всё холоднее)</span></div></li>
+<li><b>Раздражающая повторяющаяся привычка</b> (always + Continuous — есть и в прошедшем, по той же логике, что и в настоящем).
+<div class="ex">He was always losing his keys. <span class="ru">(он вечно терял ключи)</span></div></li>
+</ol>
+</section>
+
+<section>
+<h2>Past Simple vs Past Continuous</h2>
+
+<div class="card">
+<b>Прерванное действие</b> — длинное действие (Continuous) прерывается коротким (Simple).
+<div class="ex">I was sleeping when you called. <span class="ru">(я спала, когда ты позвонил)</span></div>
+Длинное действие — Continuous, короткое, резкое — Simple.
+</div>
+
+<div class="card">
+<b>Параллельные действия</b> — оба в процессе одновременно.
+<div class="ex">While I was cooking, my husband was watching the news. <span class="ru">(пока я готовила, муж смотрел новости)</span></div>
+Continuous + Continuous, связка while.
+</div>
+
+<div class="card">
+<b>Последовательность</b> — одно действие закончилось, началось следующее.
+<div class="ex">I came home, had dinner and went to bed. <span class="ru">(я пришла домой, поужинала и легла спать)</span></div>
+Simple + Simple, часто с then, after that.
+</div>
+
+<h3>Частая ошибка</h3>
+<div class="note">
+Глаголы состояния (state verbs) — это не какой-то отдельный список из пары слов, а целая категория: восприятие (see, hear, smell, taste), мышление (know, understand, believe, think, remember), чувства и отношение (like, love, hate, want, need, prefer), обладание (have, own, belong) и некоторые другие (cost, weigh, seem, mean). Все они почти никогда не употребляются в Continuous — ни в настоящем, ни в прошлом.<br>
+❌ I was knowing the answer. → ✅ I knew the answer. <span class="ru">(я знала ответ)</span>
+</div>
+</section>
+
+</div>
+
+<div id="tab-verbs" class="tab-panel">
+<section style="margin-top:28px">
+<h2>Неправильные глаголы</h2>
+<div class="hint">Нажми на любое слово — появится произношение русскими буквами.</div>
+<div class="vgrid" id="vgrid"></div>
+</section>
+</div>
+
+</main>
+
+<footer>voronovaschool</footer>
+
+<script>
+function showTab(id, btn){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function W(w,p){return '<span class="word" onclick="this.classList.toggle(\'show\')">'+w+'<span class="pr"> \u2014 '+p+'</span></span>';}
+// \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442: 1 = \u0433\u043b\u0430\u0433\u043e\u043b \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u044f, \u0443 \u043d\u0435\u0433\u043e \u043d\u0435\u0442 \u0444\u043e\u0440\u043c\u044b Continuous (\u0432 \u0442.\u0447. Past Continuous)
+const verbs = [
+["be","\u0431\u0438","was/were","\u0443\u043e\u0437/\u0443\u044d","been","\u0431\u0438\u043d","\u0431\u044b\u0442\u044c",1],
+["become","\u0431\u0438\u043a\u0410\u043c","became","\u0431\u0438\u043a\u0415\u0439\u043c","become","\u0431\u0438\u043a\u0410\u043c","\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c\u0441\u044f",0],
+["begin","\u0431\u0438\u0433\u0418\u043d","began","\u0431\u0438\u0433\u042d\u043d","begun","\u0431\u0438\u0433\u0410\u043d","\u043d\u0430\u0447\u0438\u043d\u0430\u0442\u044c",0],
+["bend","\u0431\u044d\u043d\u0434","bent","\u0431\u0435\u043d\u0442","bent","\u0431\u0435\u043d\u0442","\u0433\u043d\u0443\u0442\u044c",0],
+["bite","\u0431\u0430\u0439\u0442","bit","\u0431\u0438\u0442","bitten","\u0431\u0438\u0442\u043d","\u043a\u0443\u0441\u0430\u0442\u044c",0],
+["bleed","\u0431\u043b\u0438\u0434","bled","\u0431\u043b\u0435\u0434","bled","\u0431\u043b\u0435\u0434","\u043a\u0440\u043e\u0432\u043e\u0442\u043e\u0447\u0438\u0442\u044c",0],
+["blow","\u0431\u043b\u043e\u0443","blew","\u0431\u043b\u0443","blown","\u0431\u043b\u043e\u0443\u043d","\u0434\u0443\u0442\u044c",0],
+["break","\u0431\u0440\u0415\u0439\u043a","broke","\u0431\u0440\u041e\u0443\u043a","broken","\u0431\u0440\u041e\u0443\u043a\u0435\u043d","\u043b\u043e\u043c\u0430\u0442\u044c",0],
+["bring","\u0431\u0440\u0418\u043d\u0433","brought","\u0431\u0440\u043e\u0442","brought","\u0431\u0440\u043e\u0442","\u043f\u0440\u0438\u043d\u043e\u0441\u0438\u0442\u044c",0],
+["build","\u0431\u0438\u043b\u0434","built","\u0431\u0438\u043b\u0442","built","\u0431\u0438\u043b\u0442","\u0441\u0442\u0440\u043e\u0438\u0442\u044c",0],
+["burn","\u0431\u0451\u043d","burnt/burned","\u0431\u0451\u043d\u0442/\u0431\u0451\u043d\u0434","burnt/burned","\u0431\u0451\u043d\u0442/\u0431\u0451\u043d\u0434","\u0433\u043e\u0440\u0435\u0442\u044c, \u0436\u0435\u0447\u044c",0],
+["burst","\u0431\u0451\u0441\u0442","burst","\u0431\u0451\u0441\u0442","burst","\u0431\u0451\u0441\u0442","\u043b\u043e\u043f\u0430\u0442\u044c\u0441\u044f",0],
+["buy","\u0431\u0430\u0439","bought","\u0431\u043e\u0442","bought","\u0431\u043e\u0442","\u043f\u043e\u043a\u0443\u043f\u0430\u0442\u044c",0],
+["catch","\u043a\u044d\u0447","caught","\u043a\u043e\u0442","caught","\u043a\u043e\u0442","\u043b\u043e\u0432\u0438\u0442\u044c",0],
+["choose","\u0447\u0443\u0437","chose","\u0447\u043e\u0443\u0437","chosen","\u0447\u041e\u0443\u0437\u0435\u043d","\u0432\u044b\u0431\u0438\u0440\u0430\u0442\u044c",0],
+["come","\u043a\u0430\u043c","came","\u043a\u0435\u0439\u043c","come","\u043a\u0430\u043c","\u043f\u0440\u0438\u0445\u043e\u0434\u0438\u0442\u044c",0],
+["cost","\u043a\u043e\u0441\u0442","cost","\u043a\u043e\u0441\u0442","cost","\u043a\u043e\u0441\u0442","\u0441\u0442\u043e\u0438\u0442\u044c",1],
+["cut","\u043a\u0430\u0442","cut","\u043a\u0430\u0442","cut","\u043a\u0430\u0442","\u0440\u0435\u0437\u0430\u0442\u044c",0],
+["deal","\u0434\u0438\u043b","dealt","\u0434\u044d\u043b\u0442","dealt","\u0434\u044d\u043b\u0442","\u0438\u043c\u0435\u0442\u044c \u0434\u0435\u043b\u043e, \u0442\u043e\u0440\u0433\u043e\u0432\u0430\u0442\u044c",0],
+["dig","\u0434\u0438\u0433","dug","\u0434\u0430\u0433","dug","\u0434\u0430\u0433","\u043a\u043e\u043f\u0430\u0442\u044c",0],
+["do","\u0434\u0443","did","\u0434\u0438\u0434","done","\u0434\u0430\u043d","\u0434\u0435\u043b\u0430\u0442\u044c",0],
+["draw","\u0434\u0440\u043e","drew","\u0434\u0440\u0443","drawn","\u0434\u0440\u043e\u043d","\u0440\u0438\u0441\u043e\u0432\u0430\u0442\u044c",0],
+["dream","\u0434\u0440\u0438\u043c","dreamt/dreamed","\u0434\u0440\u044d\u043c\u0442/\u0434\u0440\u0438\u043c\u0434","dreamt/dreamed","\u0434\u0440\u044d\u043c\u0442/\u0434\u0440\u0438\u043c\u0434","\u043c\u0435\u0447\u0442\u0430\u0442\u044c, \u0432\u0438\u0434\u0435\u0442\u044c \u0441\u043e\u043d",0],
+["drink","\u0434\u0440\u0438\u043d\u043a","drank","\u0434\u0440\u044d\u043d\u043a","drunk","\u0434\u0440\u0430\u043d\u043a","\u043f\u0438\u0442\u044c",0],
+["drive","\u0434\u0440\u0430\u0439\u0432","drove","\u0434\u0440\u043e\u0443\u0432","driven","\u0434\u0440\u0438\u0432\u0435\u043d","\u0432\u043e\u0434\u0438\u0442\u044c \u043c\u0430\u0448\u0438\u043d\u0443",0],
+["eat","\u0438\u0442","ate","\u044d\u0439\u0442","eaten","\u0438\u0442\u043d","\u0435\u0441\u0442\u044c",0],
+["fall","\u0444\u043e\u043b","fell","\u0444\u044d\u043b","fallen","\u0444\u043e\u043b\u0435\u043d","\u043f\u0430\u0434\u0430\u0442\u044c",0],
+["feed","\u0444\u0438\u0434","fed","\u0444\u0435\u0434","fed","\u0444\u0435\u0434","\u043a\u043e\u0440\u043c\u0438\u0442\u044c",0],
+["feel","\u0444\u0438\u043b","felt","\u0444\u0435\u043b\u0442","felt","\u0444\u0435\u043b\u0442","\u0447\u0443\u0432\u0441\u0442\u0432\u043e\u0432\u0430\u0442\u044c",0],
+["fight","\u0444\u0430\u0439\u0442","fought","\u0444\u043e\u0442","fought","\u0444\u043e\u0442","\u0434\u0440\u0430\u0442\u044c\u0441\u044f, \u0431\u043e\u0440\u043e\u0442\u044c\u0441\u044f",0],
+["find","\u0444\u0430\u0439\u043d\u0434","found","\u0444\u0430\u0443\u043d\u0434","found","\u0444\u0430\u0443\u043d\u0434","\u043d\u0430\u0445\u043e\u0434\u0438\u0442\u044c",0],
+["fit","\u0444\u0438\u0442","fit/fitted","\u0444\u0438\u0442/\u0444\u0418\u0442\u0438\u0434","fit/fitted","\u0444\u0438\u0442/\u0444\u0418\u0442\u0438\u0434","\u043f\u043e\u0434\u0445\u043e\u0434\u0438\u0442\u044c \u043f\u043e \u0440\u0430\u0437\u043c\u0435\u0440\u0443",1],
+["flee","\u0444\u043b\u0438","fled","\u0444\u043b\u0435\u0434","fled","\u0444\u043b\u0435\u0434","\u0431\u0435\u0436\u0430\u0442\u044c, \u0441\u043f\u0430\u0441\u0430\u0442\u044c\u0441\u044f",0],
+["fly","\u0444\u043b\u0430\u0439","flew","\u0444\u043b\u0443","flown","\u0444\u043b\u043e\u0443\u043d","\u043b\u0435\u0442\u0430\u0442\u044c",0],
+["forbid","\u0444\u043e\u0431\u0418\u0434","forbade","\u0444\u043e\u0431\u042d\u0439\u0434","forbidden","\u0444\u043e\u0431\u0418\u0434\u043d","\u0437\u0430\u043f\u0440\u0435\u0449\u0430\u0442\u044c",0],
+["forget","\u0444\u043e\u0433\u0415\u0442","forgot","\u0444\u043e\u0433\u041e\u0442","forgotten","\u0444\u043e\u0433\u041e\u0442\u043d","\u0437\u0430\u0431\u044b\u0432\u0430\u0442\u044c",0],
+["forgive","\u0444\u043e\u0433\u0418\u0432","forgave","\u0444\u043e\u0433\u0415\u0439\u0432","forgiven","\u0444\u043e\u0433\u0418\u0432\u043d","\u043f\u0440\u043e\u0449\u0430\u0442\u044c",0],
+["freeze","\u0444\u0440\u0438\u0437","froze","\u0444\u0440\u043e\u0443\u0437","frozen","\u0444\u0440\u041e\u0443\u0437\u0435\u043d","\u0437\u0430\u043c\u0435\u0440\u0437\u0430\u0442\u044c",0],
+["get","\u0433\u0435\u0442","got","\u0433\u043e\u0442","got/gotten","\u0433\u043e\u0442/\u0433\u041e\u0442\u043d","\u043f\u043e\u043b\u0443\u0447\u0430\u0442\u044c, \u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u044c\u0441\u044f",0],
+["give","\u0433\u0438\u0432","gave","\u0433\u0435\u0439\u0432","given","\u0433\u0438\u0432\u043d","\u0434\u0430\u0432\u0430\u0442\u044c",0],
+["go","\u0433\u043e\u0443","went","\u0443\u044d\u043d\u0442","gone","\u0433\u043e\u043d","\u0438\u0434\u0442\u0438, \u0435\u0445\u0430\u0442\u044c",0],
+["grow","\u0433\u0440\u043e\u0443","grew","\u0433\u0440\u0443","grown","\u0433\u0440\u043e\u0443\u043d","\u0440\u0430\u0441\u0442\u0438, \u0432\u044b\u0440\u0430\u0449\u0438\u0432\u0430\u0442\u044c",0],
+["hang","\u0445\u044d\u043d\u0433","hung","\u0445\u0430\u043d\u0433","hung","\u0445\u0430\u043d\u0433","\u0432\u0435\u0448\u0430\u0442\u044c",0],
+["have","\u0445\u044d\u0432","had","\u0445\u044d\u0434","had","\u0445\u044d\u0434","\u0438\u043c\u0435\u0442\u044c",1],
+["hear","\u0445\u0438\u044d","heard","\u0445\u0451\u0434","heard","\u0445\u0451\u0434","\u0441\u043b\u044b\u0448\u0430\u0442\u044c",1],
+["hide","\u0445\u0430\u0439\u0434","hid","\u0445\u0438\u0434","hidden","\u0445\u0438\u0434\u0435\u043d","\u043f\u0440\u044f\u0442\u0430\u0442\u044c",0],
+["hit","\u0445\u0438\u0442","hit","\u0445\u0438\u0442","hit","\u0445\u0438\u0442","\u0443\u0434\u0430\u0440\u044f\u0442\u044c",0],
+["hold","\u0445\u043e\u043b\u0434","held","\u0445\u0435\u043b\u0434","held","\u0445\u0435\u043b\u0434","\u0434\u0435\u0440\u0436\u0430\u0442\u044c",0],
+["hurt","\u0445\u0451\u0442","hurt","\u0445\u0451\u0442","hurt","\u0445\u0451\u0442","\u043f\u0440\u0438\u0447\u0438\u043d\u044f\u0442\u044c \u0431\u043e\u043b\u044c",0],
+["keep","\u043a\u0438\u043f","kept","\u043a\u0435\u043f\u0442","kept","\u043a\u0435\u043f\u0442","\u0445\u0440\u0430\u043d\u0438\u0442\u044c, \u0434\u0435\u0440\u0436\u0430\u0442\u044c",0],
+["kneel","\u043d\u0438\u043b","knelt","\u043d\u044d\u043b\u0442","knelt","\u043d\u044d\u043b\u0442","\u0441\u0442\u043e\u044f\u0442\u044c \u043d\u0430 \u043a\u043e\u043b\u0435\u043d\u044f\u0445",0],
+["know","\u043d\u043e\u0443","knew","\u043d\u044c\u044e","known","\u043d\u043e\u0443\u043d","\u0437\u043d\u0430\u0442\u044c",1],
+["lay","\u043b\u044d\u0439","laid","\u043b\u044d\u0439\u0434","laid","\u043b\u044d\u0439\u0434","\u043a\u043b\u0430\u0441\u0442\u044c (\u0447\u0442\u043e-\u0442\u043e)",0],
+["lead","\u043b\u0438\u0434","led","\u043b\u0435\u0434","led","\u043b\u0435\u0434","\u0432\u0435\u0441\u0442\u0438",0],
+["lean","\u043b\u0438\u043d","leant/leaned","\u043b\u0438\u043d\u0442/\u043b\u0438\u043d\u0434","leant/leaned","\u043b\u0438\u043d\u0442/\u043b\u0438\u043d\u0434","\u043d\u0430\u043a\u043b\u043e\u043d\u044f\u0442\u044c\u0441\u044f",0],
+["leap","\u043b\u0438\u043f","leapt/leaped","\u043b\u044d\u043f\u0442/\u043b\u0438\u043f\u0442","leapt/leaped","\u043b\u044d\u043f\u0442/\u043b\u0438\u043f\u0442","\u043f\u0440\u044b\u0433\u0430\u0442\u044c",0],
+["leave","\u043b\u0438\u0432","left","\u043b\u0435\u0444\u0442","left","\u043b\u0435\u0444\u0442","\u0443\u0445\u043e\u0434\u0438\u0442\u044c, \u043e\u0441\u0442\u0430\u0432\u043b\u044f\u0442\u044c",0],
+["lend","\u043b\u044d\u043d\u0434","lent","\u043b\u0435\u043d\u0442","lent","\u043b\u0435\u043d\u0442","\u043e\u0434\u0430\u043b\u0436\u0438\u0432\u0430\u0442\u044c (\u043a\u043e\u043c\u0443-\u0442\u043e)",0],
+["let","\u043b\u0435\u0442","let","\u043b\u0435\u0442","let","\u043b\u0435\u0442","\u043f\u043e\u0437\u0432\u043e\u043b\u044f\u0442\u044c",0],
+["lie","\u043b\u0430\u0439","lay","\u043b\u044d\u0439","lain","\u043b\u044d\u0439\u043d","\u043b\u0435\u0436\u0430\u0442\u044c",0],
+["light","\u043b\u0430\u0439\u0442","lit","\u043b\u0438\u0442","lit","\u043b\u0438\u0442","\u0437\u0430\u0436\u0438\u0433\u0430\u0442\u044c",0],
+["lose","\u043b\u0443\u0437","lost","\u043b\u043e\u0441\u0442","lost","\u043b\u043e\u0441\u0442","\u0442\u0435\u0440\u044f\u0442\u044c",0],
+["make","\u043c\u0435\u0439\u043a","made","\u043c\u0435\u0439\u0434","made","\u043c\u0435\u0439\u0434","\u0434\u0435\u043b\u0430\u0442\u044c, \u0441\u043e\u0437\u0434\u0430\u0432\u0430\u0442\u044c",0],
+["mean","\u043c\u0438\u043d","meant","\u043c\u0435\u043d\u0442","meant","\u043c\u0435\u043d\u0442","\u0437\u043d\u0430\u0447\u0438\u0442\u044c",1],
+["meet","\u043c\u0438\u0442","met","\u043c\u0435\u0442","met","\u043c\u0435\u0442","\u0432\u0441\u0442\u0440\u0435\u0447\u0430\u0442\u044c",0],
+["mistake","\u043c\u0438\u0441\u0442\u042d\u0439\u043a","mistook","\u043c\u0438\u0441\u0442\u0423\u043a","mistaken","\u043c\u0438\u0441\u0442\u042d\u0439\u043a\u0435\u043d","\u043e\u0448\u0438\u0431\u0430\u0442\u044c\u0441\u044f",0],
+["overcome","\u043e\u0443\u0432\u044d\u043a\u0410\u043c","overcame","\u043e\u0443\u0432\u044d\u043a\u0415\u0439\u043c","overcome","\u043e\u0443\u0432\u044d\u043a\u0410\u043c","\u043f\u0440\u0435\u043e\u0434\u043e\u043b\u0435\u0432\u0430\u0442\u044c",0],
+["pay","\u043f\u044d\u0439","paid","\u043f\u044d\u0439\u0434","paid","\u043f\u044d\u0439\u0434","\u043f\u043b\u0430\u0442\u0438\u0442\u044c",0],
+["prove","\u043f\u0440\u0443\u0432","proved","\u043f\u0440\u0443\u0432\u0434","proved/proven","\u043f\u0440\u0443\u0432\u0434/\u043f\u0440\u0423\u0432\u0435\u043d","\u0434\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c",0],
+["put","\u043f\u0443\u0442","put","\u043f\u0443\u0442","put","\u043f\u0443\u0442","\u043a\u043b\u0430\u0441\u0442\u044c",0],
+["quit","\u043a\u0432\u0438\u0442","quit","\u043a\u0432\u0438\u0442","quit","\u043a\u0432\u0438\u0442","\u0431\u0440\u043e\u0441\u0430\u0442\u044c, \u0443\u0432\u043e\u043b\u044c\u043d\u044f\u0442\u044c\u0441\u044f",0],
+["read","\u0440\u0438\u0434","read","\u0440\u044d\u0434","read","\u0440\u044d\u0434","\u0447\u0438\u0442\u0430\u0442\u044c",0],
+["ride","\u0440\u0430\u0439\u0434","rode","\u0440\u043e\u0443\u0434","ridden","\u0440\u0438\u0434\u043d","\u0435\u0445\u0430\u0442\u044c \u0432\u0435\u0440\u0445\u043e\u043c/\u043d\u0430 \u0432\u0435\u043b\u043e\u0441\u0438\u043f\u0435\u0434\u0435",0],
+["ring","\u0440\u0438\u043d\u0433","rang","\u0440\u044d\u043d\u0433","rung","\u0440\u0430\u043d\u0433","\u0437\u0432\u043e\u043d\u0438\u0442\u044c",0],
+["rise","\u0440\u0430\u0439\u0437","rose","\u0440\u043e\u0443\u0437","risen","\u0440\u0438\u0437\u043d","\u043f\u043e\u0434\u043d\u0438\u043c\u0430\u0442\u044c\u0441\u044f",0],
+["run","\u0440\u0430\u043d","ran","\u0440\u044d\u043d","run","\u0440\u0430\u043d","\u0431\u0435\u0433\u0430\u0442\u044c",0],
+["say","\u0441\u044d\u0439","said","\u0441\u044d\u0434","said","\u0441\u044d\u0434","\u0433\u043e\u0432\u043e\u0440\u0438\u0442\u044c",0],
+["see","\u0441\u0438","saw","\u0441\u043e","seen","\u0441\u0438\u043d","\u0432\u0438\u0434\u0435\u0442\u044c",1],
+["sell","\u0441\u044d\u043b","sold","\u0441\u043e\u043b\u0434","sold","\u0441\u043e\u043b\u0434","\u043f\u0440\u043e\u0434\u0430\u0432\u0430\u0442\u044c",0],
+["send","\u0441\u044d\u043d\u0434","sent","\u0441\u0435\u043d\u0442","sent","\u0441\u0435\u043d\u0442","\u043e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0442\u044c",0],
+["set","\u0441\u044d\u0442","set","\u0441\u044d\u0442","set","\u0441\u044d\u0442","\u0443\u0441\u0442\u0430\u043d\u0430\u0432\u043b\u0438\u0432\u0430\u0442\u044c",0],
+["shake","\u0448\u0435\u0439\u043a","shook","\u0448\u0443\u043a","shaken","\u0448\u0415\u0439\u043a\u0435\u043d","\u0442\u0440\u044f\u0441\u0442\u0438",0],
+["shine","\u0448\u0430\u0439\u043d","shone","\u0448\u043e\u043d","shone","\u0448\u043e\u043d","\u0441\u0432\u0435\u0442\u0438\u0442\u044c, \u0441\u0438\u044f\u0442\u044c",0],
+["shoot","\u0448\u0443\u0442","shot","\u0448\u043e\u0442","shot","\u0448\u043e\u0442","\u0441\u0442\u0440\u0435\u043b\u044f\u0442\u044c",0],
+["show","\u0448\u043e\u0443","showed","\u0448\u043e\u0443\u0434","shown","\u0448\u043e\u0443\u043d","\u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c",0],
+["shrink","\u0448\u0440\u0438\u043d\u043a","shrank","\u0448\u0440\u044d\u043d\u043a","shrunk","\u0448\u0440\u0430\u043d\u043a","\u0441\u0436\u0438\u043c\u0430\u0442\u044c\u0441\u044f",0],
+["shut","\u0448\u0430\u0442","shut","\u0448\u0430\u0442","shut","\u0448\u0430\u0442","\u0437\u0430\u043a\u0440\u044b\u0432\u0430\u0442\u044c",0],
+["sing","\u0441\u0438\u043d\u0433","sang","\u0441\u044d\u043d\u0433","sung","\u0441\u0430\u043d\u0433","\u043f\u0435\u0442\u044c",0],
+["sit","\u0441\u0438\u0442","sat","\u0441\u044d\u0442","sat","\u0441\u044d\u0442","\u0441\u0438\u0434\u0435\u0442\u044c",0],
+["sleep","\u0441\u043b\u0438\u043f","slept","\u0441\u043b\u044d\u043f\u0442","slept","\u0441\u043b\u044d\u043f\u0442","\u0441\u043f\u0430\u0442\u044c",0],
+["slide","\u0441\u043b\u0430\u0439\u0434","slid","\u0441\u043b\u0438\u0434","slid","\u0441\u043b\u0438\u0434","\u0441\u043a\u043e\u043b\u044c\u0437\u0438\u0442\u044c",0],
+["smell","\u0441\u043c\u044d\u043b","smelt/smelled","\u0441\u043c\u044d\u043b\u0442/\u0441\u043c\u044d\u043b\u0434","smelt/smelled","\u0441\u043c\u044d\u043b\u0442/\u0441\u043c\u044d\u043b\u0434","\u043f\u0430\u0445\u043d\u0443\u0442\u044c",1],
+["speak","\u0441\u043f\u0438\u043a","spoke","\u0441\u043f\u043e\u0443\u043a","spoken","\u0441\u043f\u043e\u0443\u043a\u0435\u043d","\u0433\u043e\u0432\u043e\u0440\u0438\u0442\u044c",0],
+["spend","\u0441\u043f\u044d\u043d\u0434","spent","\u0441\u043f\u044d\u043d\u0442","spent","\u0441\u043f\u044d\u043d\u0442","\u0442\u0440\u0430\u0442\u0438\u0442\u044c, \u043f\u0440\u043e\u0432\u043e\u0434\u0438\u0442\u044c \u0432\u0440\u0435\u043c\u044f",0],
+["spill","\u0441\u043f\u0438\u043b","spilt/spilled","\u0441\u043f\u0438\u043b\u0442/\u0441\u043f\u0438\u043b\u0434","spilt/spilled","\u0441\u043f\u0438\u043b\u0442/\u0441\u043f\u0438\u043b\u0434","\u043f\u0440\u043e\u043b\u0438\u0432\u0430\u0442\u044c",0],
+["spit","\u0441\u043f\u0438\u0442","spat","\u0441\u043f\u044d\u0442","spat","\u0441\u043f\u044d\u0442","\u043f\u043b\u0435\u0432\u0430\u0442\u044c",0],
+["split","\u0441\u043f\u043b\u0438\u0442","split","\u0441\u043f\u043b\u0438\u0442","split","\u0441\u043f\u043b\u0438\u0442","\u0440\u0430\u0441\u043a\u0430\u043b\u044b\u0432\u0430\u0442\u044c",0],
+["spoil","\u0441\u043f\u043e\u0439\u043b","spoilt/spoiled","\u0441\u043f\u043e\u0439\u043b\u0442/\u0441\u043f\u043e\u0439\u043b\u0434","spoilt/spoiled","\u0441\u043f\u043e\u0439\u043b\u0442/\u0441\u043f\u043e\u0439\u043b\u0434","\u043f\u043e\u0440\u0442\u0438\u0442\u044c",0],
+["spread","\u0441\u043f\u0440\u044d\u0434","spread","\u0441\u043f\u0440\u044d\u0434","spread","\u0441\u043f\u0440\u044d\u0434","\u0440\u0430\u0441\u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u044f\u0442\u044c",0],
+["spring","\u0441\u043f\u0440\u0438\u043d\u0433","sprang","\u0441\u043f\u0440\u044d\u043d\u0433","sprung","\u0441\u043f\u0440\u0430\u043d\u0433","\u043f\u0440\u044b\u0433\u0430\u0442\u044c, \u0432\u043e\u0437\u043d\u0438\u043a\u0430\u0442\u044c",0],
+["stand","\u0441\u0442\u044d\u043d\u0434","stood","\u0441\u0442\u0443\u0434","stood","\u0441\u0442\u0443\u0434","\u0441\u0442\u043e\u044f\u0442\u044c",0],
+["steal","\u0441\u0442\u0438\u043b","stole","\u0441\u0442\u043e\u0443\u043b","stolen","\u0441\u0442\u041e\u0443\u043b\u0435\u043d","\u043a\u0440\u0430\u0441\u0442\u044c",0],
+["strike","\u0441\u0442\u0440\u0430\u0439\u043a","struck","\u0441\u0442\u0440\u0430\u043a","struck","\u0441\u0442\u0440\u0430\u043a","\u0431\u0438\u0442\u044c, \u0431\u0430\u0441\u0442\u043e\u0432\u0430\u0442\u044c",0],
+["swear","\u0441\u0432\u044d\u0430","swore","\u0441\u0432\u043e\u0430","sworn","\u0441\u0432\u043e\u0440\u043d","\u043a\u043b\u044f\u0441\u0442\u044c\u0441\u044f, \u0440\u0443\u0433\u0430\u0442\u044c\u0441\u044f",0],
+["sweep","\u0441\u0432\u0438\u043f","swept","\u0441\u0432\u044d\u043f\u0442","swept","\u0441\u0432\u044d\u043f\u0442","\u043f\u043e\u0434\u043c\u0435\u0442\u0430\u0442\u044c",0],
+["swell","\u0441\u0432\u044d\u043b","swelled","\u0441\u0432\u044d\u043b\u0434","swollen","\u0441\u0432\u041e\u0443\u043b\u0435\u043d","\u043e\u043f\u0443\u0445\u0430\u0442\u044c",0],
+["swim","\u0441\u0432\u0438\u043c","swam","\u0441\u0432\u044d\u043c","swum","\u0441\u0432\u0430\u043c","\u043f\u043b\u0430\u0432\u0430\u0442\u044c",0],
+["take","\u0442\u044d\u0439\u043a","took","\u0442\u0443\u043a","taken","\u0442\u044d\u0439\u043a\u0435\u043d","\u0431\u0440\u0430\u0442\u044c",0],
+["teach","\u0442\u0438\u0447","taught","\u0442\u043e\u0442","taught","\u0442\u043e\u0442","\u0443\u0447\u0438\u0442\u044c (\u043a\u043e\u0433\u043e-\u0442\u043e)",0],
+["tear","\u0442\u044d\u0430","tore","\u0442\u043e\u0430","torn","\u0442\u043e\u043d","\u0440\u0432\u0430\u0442\u044c",0],
+["tell","\u0442\u044d\u043b","told","\u0442\u043e\u043b\u0434","told","\u0442\u043e\u043b\u0434","\u0440\u0430\u0441\u0441\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c",0],
+["think","\u0441\u0438\u043d\u043a","thought","\u0441\u043e\u0442","thought","\u0441\u043e\u0442","\u0434\u0443\u043c\u0430\u0442\u044c",1],
+["throw","\u0441\u0440\u043e\u0443","threw","\u0441\u0440\u0443","thrown","\u0441\u0440\u043e\u0443\u043d","\u0431\u0440\u043e\u0441\u0430\u0442\u044c",0],
+["understand","\u0430\u043d\u0434\u044d\u0441\u0442\u042d\u043d\u0434","understood","\u0430\u043d\u0434\u044d\u0441\u0442\u0423\u0434","understood","\u0430\u043d\u0434\u044d\u0441\u0442\u0423\u0434","\u043f\u043e\u043d\u0438\u043c\u0430\u0442\u044c",1],
+["wake","\u0443\u044d\u0439\u043a","woke","\u0443\u043e\u0443\u043a","woken","\u0443\u041e\u0443\u043a\u0435\u043d","\u043f\u0440\u043e\u0441\u044b\u043f\u0430\u0442\u044c\u0441\u044f",0],
+["wear","\u0443\u044d\u0430","wore","\u0443\u043e\u0430","worn","\u0443\u043e\u043d","\u043d\u043e\u0441\u0438\u0442\u044c (\u043e\u0434\u0435\u0436\u0434\u0443)",0],
+["weep","\u0432\u0438\u043f","wept","\u0432\u044d\u043f\u0442","wept","\u0432\u044d\u043f\u0442","\u043f\u043b\u0430\u043a\u0430\u0442\u044c",0],
+["win","\u0443\u0438\u043d","won","\u0443\u0430\u043d","won","\u0443\u0430\u043d","\u043f\u043e\u0431\u0435\u0436\u0434\u0430\u0442\u044c, \u0432\u044b\u0438\u0433\u0440\u044b\u0432\u0430\u0442\u044c",0],
+["wind","\u0432\u0430\u0439\u043d\u0434","wound","\u0432\u0410\u0443\u043d\u0434","wound","\u0432\u0410\u0443\u043d\u0434","\u0437\u0430\u0432\u043e\u0434\u0438\u0442\u044c (\u0447\u0430\u0441\u044b), \u0432\u0438\u0442\u044c\u0441\u044f",0],
+["withdraw","\u0443\u0438\u0437\u0434\u0440\u041e","withdrew","\u0443\u0438\u0437\u0434\u0440\u0423","withdrawn","\u0443\u0438\u0437\u0434\u0440\u041e\u043d","\u0441\u043d\u0438\u043c\u0430\u0442\u044c (\u0434\u0435\u043d\u044c\u0433\u0438), \u043e\u0442\u0437\u044b\u0432\u0430\u0442\u044c",0],
+["write","\u0440\u0430\u0439\u0442","wrote","\u0440\u043e\u0443\u0442","written","\u0440\u0418\u0442\u0442\u0435\u043d","\u043f\u0438\u0441\u0430\u0442\u044c",0]
+];
+const grid = document.getElementById('vgrid');
+grid.innerHTML = verbs.map(v=>
+  '<div class="vcard">'+
+    '<div class="vrow"><span class="vlabel">1</span>'+W(v[0],v[1])+'</div>'+
+    '<div class="vrow"><span class="vlabel">2</span>'+W(v[2],v[3])+'</div>'+
+    '<div class="vrow"><span class="vlabel">3</span>'+W(v[4],v[5])+'</div>'+
+    '<div class="tr">'+v[6]+'</div>'+
+    (v[7]?'<div class="badge">\u043d\u0435\u0442 \u0444\u043e\u0440\u043c\u044b Continuous</div>':'')+
+  '</div>'
+).join('');
+</script>
+</body></html>
