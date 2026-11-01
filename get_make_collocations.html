@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Collocations with GET and MAKE</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--m:#4A1A26;--m2:#7A2E40;--g:#5F7284;--bg:#F1E9DB;--card:#FBF7EF;--ink:#2B1F22;--line:#DCE3E8;--get:#1d6fa5;--make:#c2185b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 Manrope,system-ui,sans-serif;padding-bottom:50px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;margin:0;line-height:1.15}
+header{background:var(--m);color:#F1E9DB;text-align:center;padding:40px 20px 30px}
+header h1{font-size:clamp(30px,6vw,46px)}header p{margin:8px 0 0;color:#d9c3b3}
+main{max-width:900px;margin:0 auto;padding:0 18px}
+h2{font-size:clamp(28px,5vw,38px);margin:40px 0 4px;padding-bottom:6px;border-bottom:3px solid var(--c)}
+.get{--c:var(--get)}.make{--c:var(--make)}
+h2{color:var(--c)}
+.sub{color:var(--g);margin:6px 0 16px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:12px;padding:14px 16px}
+.card b{display:block;font:700 23px 'Cormorant Garamond',serif;color:var(--c);margin-bottom:4px}
+.card p{margin:0 0 6px;font-size:15.5px}
+.card i{color:var(--g);font-size:15px}
+.q{background:var(--card);border:1px solid var(--line);border-left:7px solid var(--c);border-radius:12px;padding:14px 18px 6px;margin-top:16px}
+.q h3{font-size:24px;color:var(--c);margin-bottom:8px}
+ol{margin:0;padding-left:22px}li{margin-bottom:10px}
+li b{color:var(--c)}
+footer{text-align:center;margin-top:44px;font:600 24px 'Cormorant Garamond',serif;color:var(--g)}
+</style></head>
+<body>
+<header><h1>Collocations with GET and MAKE</h1><p>More expressions, meanings and questions</p></header>
+<main>
+<section class="get"><h2>GET</h2><p class="sub">Expressions that are not on the textbook page.</p><div class="grid" id="g"></div>
+<div class="q"><h3>Talk about it</h3><ol id="gq"></ol></div></section>
+<section class="make"><h2>MAKE</h2><p class="sub">Expressions that are not on the textbook page.</p><div class="grid" id="m"></div>
+<div class="q"><h3>Talk about it</h3><ol id="mq"></ol></div></section>
+<section class="get"><h2 style="color:var(--m2);border-color:var(--m2)">GET + MAKE together</h2><div class="q" style="--c:var(--m2)"><h3>Mixed questions</h3><ol id="xq"></ol></div></section>
+<footer>voronovaschool</footer>
+</main>
+<script>
+const G=[
+["get ready","to prepare yourself or something for an activity","I need to get ready for the meeting."],
+["get on (a bus / train)","to enter public transport. The opposite is get off.","I got on the wrong train."],
+["get used to","to become familiar with something, so it no longer feels strange or difficult","It took me a month to get used to working from home."],
+["get stuck","to be unable to move or to continue","I got stuck on the last question."],
+["get over","to recover from an illness, a bad experience or a disappointment","She got over the flu quickly."],
+["get rid of","to throw away or remove something you don’t want","I got rid of my old laptop."],
+["get in touch with","to contact someone","I’ll get in touch with you tomorrow."],
+["get back to someone","to reply or call someone later","I’ll get back to you after lunch."],
+["get the point","to understand what someone really means","I don’t get the point of this meeting."],
+["get away","to go on a short holiday, or to escape from a place","We need to get away for a weekend."],
+["get together","to meet socially","Let’s get together on Friday."],
+["get better","to improve, or to recover from an illness","My English is getting better."]];
+const M=[
+["make a decision","to choose what to do","It’s hard to make a decision when you have no information."],
+["make up your mind","to finally decide","I can’t make up my mind: tea or coffee?"],
+["make progress","to improve or move forward","She is making good progress in English."],
+["make an effort","to try hard","He made an effort to arrive on time."],
+["make a living","to earn money to live","He makes a living as a photographer."],
+["make friends","to start a friendship","It’s easy to make friends at university."],
+["make sense","to be logical or easy to understand","Your explanation makes sense."],
+["make a difference","to have an important effect","Small changes can make a big difference."],
+["make an excuse","to give a reason, often not true, to avoid something","He made an excuse and left early."],
+["make sure","to check that something is true or done","Make sure you save the file."],
+["make time for","to find free time for something or someone","I try to make time for sport."],
+["make a suggestion","to offer an idea","Can I make a suggestion?"]];
+const card=a=>`<div class="card"><b>${a[0]}</b><p>${a[1]}</p><i>${a[2]}</i></div>`;
+document.getElementById('g').innerHTML=G.map(card).join('');
+document.getElementById('m').innerHTML=M.map(card).join('');
+const li=a=>a.map(x=>'<li>'+x+'</li>').join('');
+document.getElementById('gq').innerHTML=li([
+"What time do you usually get up? How long does it take you to <b>get ready</b> in the morning?",
+"What was the hardest thing to <b>get used to</b> when you started your job or moved to a new place?",
+"When did you last <b>get stuck</b> on a task or in a traffic jam? What did you do?",
+"What helps you <b>get over</b> a bad day?",
+"Which things at home do you want to <b>get rid of</b>? Why?",
+"Who do you want to <b>get in touch with</b> this week? How will you do it?",
+"Do you always <b>get the point</b> of jokes in English? Tell me about a joke you didn’t get.",
+"Where would you like to <b>get away</b> to for a weekend? Who would you take with you?",
+"How often do you <b>get together</b> with your friends? What do you usually do?",
+"Is your English <b>getting better</b>? What helps you most?"]);
+document.getElementById('mq').innerHTML=li([
+"What was the last big <b>decision</b> you made? How long did it take you to <b>make up your mind</b>?",
+"In which area of your life do you want to <b>make progress</b> this year? What <b>effort</b> are you making?",
+"Is it easy to <b>make friends</b> in your city? Where do people usually meet new friends?",
+"What do people in your family do to <b>make a living</b>? Would you like to make a living from your hobby?",
+"Is there something in your daily schedule that doesn’t <b>make sense</b> to you?",
+"Can one person <b>make a difference</b> at work? Tell me about someone who made a difference for you.",
+"What <b>excuses</b> do people <b>make</b> when they are late? Which one is the worst?",
+"How do you <b>make sure</b> you meet your deadlines?",
+"Do you <b>make time for</b> rest when you are swamped with work? How?",
+"Have you ever <b>made a suggestion</b> at work that changed something?"]);
+document.getElementById('xq').innerHTML=li([
+"Tell me about a day when you <b>got lost</b> or <b>got held up</b>. What did you do? Did you <b>make a call</b> or <b>make a plan</b>?",
+"Have you ever <b>made a mistake</b> and <b>got the wrong</b> day or time? What happened?",
+"Who usually <b>makes a mess</b> at your home or office? Who cleans it up?",
+"What is difficult to <b>get used to</b> when you move to a new city? How do you <b>make friends</b> there and <b>get in touch</b> with old friends?",
+"Tell me about a time when you <b>got stuck</b> and had to <b>make a decision</b> quickly.",
+"Tell a short story using at least four of these: <b>get ready, get over, make sure, get stuck, make an excuse, make up your mind</b>."]);
+</script></body></html>
