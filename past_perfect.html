@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Past Perfect</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--m:#4A1A26;--m2:#7A2E40;--g:#5F7284;--bg:#F1E9DB;--card:#FBF7EF;--ink:#2B1F22;--line:#DCE3E8;--pf:#c2185b;--ps:#1d6fa5;--ok:#2f7d5b;--bad:#b3362f;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Manrope,system-ui,sans-serif;padding-bottom:50px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;margin:0;line-height:1.15}
+header{background:var(--m);color:#F1E9DB;text-align:center;padding:38px 20px 16px}
+header h1{font-size:clamp(30px,7vw,50px)}header p{margin:8px 0 0;color:#d9c3b3}
+nav{display:flex;justify-content:center;gap:8px;background:var(--m);padding:0 16px 18px}
+nav button{font:800 14px Manrope,sans-serif;border:1.5px solid #F1E9DB;background:transparent;color:#F1E9DB;padding:9px 20px;border-radius:999px;cursor:pointer}
+nav button.on{background:#F1E9DB;color:var(--m)}
+main{max-width:880px;margin:0 auto;padding:0 18px}
+.panel{display:none}.panel.on{display:block}
+h2{font-size:clamp(26px,5vw,34px);color:var(--m2);margin:38px 0 12px;border-bottom:2px solid var(--m2);padding-bottom:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:12px}
+.card>p{margin:4px 0}
+.use{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--pf);border-radius:14px;padding:12px 18px;margin-bottom:12px}
+.use h3{font-size:24px;color:var(--pf);margin-bottom:2px}
+.use .why{color:var(--g);font-size:15px;margin:0 0 6px}
+.ex{margin:5px 0}.ex b{color:var(--pf)}.ex span{display:block;color:var(--g);font-size:15px}
+.pf{color:var(--pf);font-weight:800}.ps{color:var(--ps);font-weight:800}
+.ru{color:var(--g);font-size:15px}
+.big{font:700 clamp(40px,9vw,60px) 'Cormorant Garamond',serif;color:var(--pf);text-align:center;margin:4px 0}
+table{width:100%;border-collapse:collapse;background:var(--card);margin:6px 0 14px;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--m);color:#F1E9DB}td.l{background:#e8dfcd;font-weight:800}
+.step{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+.step i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--m);color:#fff;font:700 18px/34px Manrope;text-align:center;font-style:normal}
+.line{display:flex;align-items:stretch;gap:6px;margin:12px 0}
+.line div{flex:1;border-radius:12px;padding:10px 12px;color:#fff;font-size:15px;text-align:center}
+.line b{display:block;font:700 21px 'Cormorant Garamond',serif}
+.line .ar{flex:none;width:22px;background:none;color:var(--m2);font-size:26px;padding:0;align-self:center}
+.mk{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mk div{background:var(--card);border:1px solid var(--line);border-left:7px solid var(--m2);border-radius:10px;padding:10px 14px;font-size:16px}
+.mk b{color:var(--m2);font-size:19px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.pair div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.pair .s{border-top:5px solid var(--ps)}.pair .p{border-top:5px solid var(--pf)}
+.pair small{display:block;font-weight:800;color:var(--g);margin-bottom:3px;text-transform:uppercase;font-size:12px;letter-spacing:.8px}
+.mis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mis div{border-radius:10px;padding:10px 14px;background:var(--card);border:1px solid var(--line)}
+.mis .x{border-left:6px solid var(--bad)}.mis .v{border-left:6px solid var(--ok)}
+ol{padding-left:22px;margin:0}li{margin-bottom:11px}
+.hint{color:var(--g);font-weight:600;font-size:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:8px 0 14px}
+summary{cursor:pointer;font-weight:800;color:var(--m2)}
+footer{text-align:center;margin-top:44px;font:600 24px 'Cormorant Garamond',serif;color:var(--g)}
+@media(max-width:600px){.mis,.pair,.mk{grid-template-columns:1fr}.line{flex-direction:column}.line .ar{transform:rotate(90deg);align-self:center;width:auto}}
+</style></head>
+<body>
+<header><h1>Past Perfect</h1><p>Прошедшее совершённое: «прошлое в прошлом»</p></header>
+<nav><button class="on" onclick="tab('t1',this)">Правило</button><button onclick="tab('t2',this)">Практика</button></nav>
+<main>
+<div id="t1" class="panel on">
+
+<h2>Зачем нужно это время</h2>
+<div class="card"><p>Когда рассказываешь историю в прошлом, часто нужно показать: <b>одно событие случилось РАНЬШЕ другого</b>. Для более раннего события и нужен Past Perfect. Другое, более позднее, остаётся в Past Simple.</p>
+<div class="line">
+<div style="background:#c2185b"><b>had fallen</b>сначала (Past Perfect)</div><div class="ar">→</div>
+<div style="background:#1d6fa5"><b>found her</b>потом (Past Simple)</div><div class="ar">→</div>
+<div style="background:#5F7284"><b>сейчас</b>момент рассказа</div></div>
+<p class="ex">A railway worker <span class="ps" style="display:inline">found</span> her. She <b>had fallen</b> off the train. <span>Рабочий нашёл её. Она упала с поезда (раньше).</span></p></div>
+
+<h2>Как понять, нужен ли Past Perfect</h2>
+<div class="card">
+<div class="step"><i>1</i><div><b>В истории есть два прошлых события или момента?</b> Если событие одно, Past Perfect не нужен.</div></div>
+<div class="step"><i>2</i><div><b>Какое случилось первым?</b> Первое событие ставим в Past Perfect.</div></div>
+<div class="step"><i>3</i><div><b>Второе (более позднее) событие или момент</b> остаётся в Past Simple.</div></div>
+<p class="ru">Подсказка по-русски: если можно вставить «уже» или «до этого» (поезд <i>уже</i> ушёл, я <i>до этого</i> не видела), то это Past Perfect.</p></div>
+
+<h2>Как образуется</h2>
+<div class="card"><div class="big">had + V3</div><p class="ru" style="text-align:center">Одна форма had для всех лиц: I, you, he, she, it, we, they</p></div>
+<table>
+<tr><th style="width:18%"></th><th>Пример</th><th style="width:34%">Кратко</th></tr>
+<tr><td class="l">+</td><td>She <b>had</b> finished work.</td><td>She<b>’d</b> finished</td></tr>
+<tr><td class="l">−</td><td>They <b>had not</b> eaten.</td><td>They <b>hadn’t</b> eaten</td></tr>
+<tr><td class="l">?</td><td><b>Had</b> you seen him before?</td><td>Yes, I <b>had</b>. / No, I <b>hadn’t</b>.</td></tr>
+<tr><td class="l">Wh-?</td><td>Why <b>had</b> she left early?</td><td>What <b>had</b> happened?</td></tr>
+</table>
+<div class="card"><p><b>V3 (третья форма).</b> У правильных глаголов это +ed (work → work<b>ed</b>). У неправильных форму надо знать:</p>
+<p class="ex" id="v3"></p></div>
+
+<h2>Когда используем</h2>
+<div id="uses"></div>
+
+<h2>Маркеры</h2>
+<div class="mk" id="mk"></div>
+
+<h2>Past Simple или Past Perfect? Пары для сравнения</h2>
+<div id="pairs"></div>
+<div class="card"><p><b>Запомни:</b> Past Perfect нужен только тогда, когда в истории есть <b>два прошлых события</b> и надо показать, какое было первым. Если порядок и так понятен из слов <i>after, before</i>, часто хватает Past Simple: <span class="ex"><b style="color:var(--ps)">After she fell, a worker found her.</b></span></p></div>
+
+<h2>В нашей истории про Индию</h2>
+<div class="card">
+<p class="ex">We <b>had booked</b> a standard ticket, and the train was very busy.<span>Билет купили заранее (раньше), а поезд был переполнен.</span></p>
+<p class="ex">Jane <b>had fallen</b> off the train, but I didn’t know it.<span>Джейн уже упала с поезда, а я ещё не знала.</span></p>
+<p class="ex">By the time I found the right place, the driver <b>had</b> already <b>left</b>.<span>К тому времени как я нашла нужное место, водитель уже уехал.</span></p>
+<p class="ex">I <b>had spent</b> six hours without water in the very hot sun.<span>Я провела шесть часов без воды на жаре (до того, как меня спасли).</span></p></div>
+
+<h2>Типичные ошибки</h2>
+<div class="mis" id="mis"></div>
+</div>
+
+<div id="t2" class="panel">
+<h2>Task 1. Put the verb in the Past Perfect</h2>
+<div class="card"><ol id="e1"></ol></div>
+<details><summary>Answers</summary><p id="a1"></p></details>
+
+<h2>Task 2. Past Simple or Past Perfect?</h2>
+<p class="ru">Выбери вариант, который подходит по смыслу.</p>
+<div class="card"><ol id="e2"></ol></div>
+<details><summary>Answers</summary><p id="a2"></p></details>
+
+<h2>Task 3. Find and correct the mistake</h2>
+<div class="card"><ol id="e3"></ol></div>
+<details><summary>Answers</summary><ol id="a3"></ol></details>
+
+<h2>Task 4. Translate into English</h2>
+<p class="ru">Слово в скобках нужно употребить.</p>
+<div class="card"><ol id="e4"></ol></div>
+
+<h2>Task 5. Speaking</h2>
+<div class="card"><ol id="e5"></ol></div>
+</div>
+<footer>voronovaschool</footer>
+</main>
+<script>
+function tab(id,b){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));document.getElementById(id).classList.add('on');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');}
+const li=a=>a.map(x=>'<li>'+x+'</li>').join('');
+const ex=a=>a.map(x=>`<div class="ex">${x[0]}<span>${x[1]}</span></div>`).join('');
+document.getElementById('v3').innerHTML="fall – fell – <b>fallen</b> · go – went – <b>gone</b> · see – saw – <b>seen</b> · take – took – <b>taken</b> · lose – lost – <b>lost</b> · eat – ate – <b>eaten</b> · break – broke – <b>broken</b> · write – wrote – <b>written</b> · do – did – <b>done</b> · give – gave – <b>given</b> · forget – forgot – <b>forgotten</b> · leave – left – <b>left</b> · buy – bought – <b>bought</b> · find – found – <b>found</b> · make – made – <b>made</b> · have – had – <b>had</b>";
+const U=[
+["1. Действие до другого действия в прошлом","Когда можно вставить «уже»: первое действие в Past Perfect.",[
+["When I got to the station, the train <b>had</b> already <b>left</b>.","Когда я пришла на станцию, поезд уже ушёл."],
+["The film <b>had</b> already <b>started</b> when we arrived.","Фильм уже начался, когда мы пришли."],
+["I wasn’t hungry because I <b>had</b> already <b>eaten</b>.","Я не была голодна, потому что уже поела."],
+["She <b>had left</b> before I came.","Она ушла до того, как я пришла."],
+["When I came to the office, the boss <b>had</b> already <b>delegated</b> all the tasks.","Когда я пришла в офис, начальник уже распределил все задачи."]]],
+["2. Действие до определённого момента в прошлом","Слово by («к») и момент времени в прошлом.",[
+["By 8 p.m., she <b>had finished</b> work.","К 8 вечера она закончила работу."],
+["By the end of the year, he <b>had saved</b> enough money.","К концу года он накопил достаточно денег."],
+["By Friday, we <b>had finished</b> the project and met the deadline.","К пятнице мы закончили проект и уложились в срок."],
+["By 2015, they <b>had moved</b> to Spain.","К 2015 году они переехали в Испанию."]]],
+["3. Причина того, что было в прошлом","Объясняем, почему в прошлом всё было именно так.",[
+["Jane was tired because she <b>hadn’t slept</b>.","Джейн была уставшей, потому что не спала."],
+["The floor was wet because it <b>had rained</b>.","Пол был мокрым, потому что прошёл дождь."],
+["He was angry because she <b>had lied</b> to him.","Он злился, потому что она ему солгала."],
+["I couldn’t open the file because I <b>had</b> accidentally <b>deleted</b> it.","Я не могла открыть файл, потому что случайно удалила его."]]],
+["4. Опыт до момента в прошлом","С never, ever, before.",[
+["He <b>had never seen</b> the sea before that trip.","До той поездки он никогда не видел море."],
+["I <b>had never eaten</b> sushi before I went to Japan.","Я никогда не ела суши до поездки в Японию."],
+["<b>Had</b> you <b>ever been</b> abroad before you were twenty?","Ты бывала за границей до двадцати лет?"]]],
+["5. Длительность до момента в прошлом","С for и since.",[
+["They <b>had lived</b> there for five years when they moved.","Они прожили там пять лет, когда переехали."],
+["She <b>had worked</b> at the company since 2015 when she left.","Она работала в компании с 2015 года, когда уволилась."]]],
+["6. Косвенная речь (рассказ о том, что сказали)","Прошлое событие в чьих-то словах переходит в Past Perfect.",[
+["She said that she <b>had lost</b> her keys.","Она сказала, что потеряла ключи."],
+["He told me that he <b>had finished</b> the report.","Он сказал мне, что закончил отчёт."],
+["I asked him if he <b>had seen</b> my phone.","Я спросила, не видел ли он мой телефон."]]],
+["7. Условие, которое не выполнилось в прошлом","If + Past Perfect, would have + V3.",[
+["If I <b>had known</b>, I would have called you.","Если бы я знала, я бы тебе позвонила."],
+["If we <b>hadn’t got</b> stuck in a traffic jam, we wouldn’t have missed the flight.","Если бы мы не застряли в пробке, мы бы не пропустили рейс."]]]];
+document.getElementById('uses').innerHTML=U.map(u=>`<div class="use"><h3>${u[0]}</h3><p class="why">${u[1]}</p>${ex(u[2])}</div>`).join('');
+const MK=[["already","уже","The film <span class=pf>had already started</span>."],["just","только что","I <span class=pf>had just left</span> when she called."],["yet","ещё (не)","She <span class=pf>hadn’t called</span> yet."],["never / ever","никогда / когда-либо","I <span class=pf>had never flown</span> before."],["before","раньше, до этого","I <span class=pf>had met</span> him before."],["after","после того как","After she <span class=pf>had eaten</span>, she left."],["by + время","к (моменту)","By Friday, we <span class=pf>had finished</span>."],["by the time","к тому времени как","By the time we arrived, they <span class=pf>had gone</span>."],["when","когда","When I called, he <span class=pf>had left</span>."],["as soon as","как только","As soon as he <span class=pf>had paid</span>, he left."],["for / since","в течение / с","She <span class=pf>had worked</span> there for two years."],["because","потому что (причина)","He was angry because she <span class=pf>had lied</span>."]];
+document.getElementById('mk').innerHTML=MK.map(m=>`<div><b>${m[0]}</b> — ${m[1]}<br>${m[2]}</div>`).join('');
+const P=[
+["When I arrived, she <b class=ps>left</b>.","Я приехала, и потом она ушла. (события идут по очереди)","When I arrived, she <b class=pf>had left</b>.","Она ушла до моего приезда. Я её не застала."],
+["When I got home, my husband <b class=ps>cooked</b> dinner.","Я пришла, и тогда муж начал готовить ужин.","When I got home, my husband <b class=pf>had cooked</b> dinner.","Когда я пришла, ужин уже был готов."],
+["I called him, and he <b class=ps>answered</b>.","Позвонила, и он ответил.","I called him, but he <b class=pf>had left</b>.","Позвонила, но он уже ушёл."],
+["I <b class=ps>lived</b> in Moscow in 2015.","Просто факт в прошлом, второго события нет.","I <b class=pf>had lived</b> in Moscow for ten years before I moved.","Прожила десять лет до того, как переехала."],
+["I <b class=ps>visited</b> India in 2019.","Один факт: Past Simple.","I <b class=pf>had visited</b> India before I went to Nepal.","Была в Индии раньше, чем поехала в Непал."]];
+document.getElementById('pairs').innerHTML=P.map(p=>`<div class="pair"><div class="s"><small>Past Simple</small>${p[0]}<br><span class="ru">${p[1]}</span></div><div class="p"><small>Past Perfect</small>${p[2]}<br><span class="ru">${p[3]}</span></div></div>`).join('');
+const M=[["I had visited India in 2019. (нет второго события)","I <b>visited</b> India in 2019."],["When I came, my sister already left.","When I came, my sister <b>had</b> already <b>left</b>."],["She was tired because she didn’t sleep the night before.","She was tired because she <b>hadn’t slept</b> the night before."],["By the time we arrived, the shop has closed.","By the time we arrived, the shop <b>had closed</b>."],["I had never saw snow before.","I had never <b>seen</b> snow before."],["He said that he lost his keys. (раньше, чем он это сказал)","He said that he <b>had lost</b> his keys."],["After she had eaten, she had gone back to work.","After she had eaten, she <b>went</b> back to work."],["Did you ever have been abroad before you were twenty?","<b>Had</b> you ever <b>been</b> abroad before you were twenty?"],["I had finish the report by Friday.","I had <b>finished</b> the report by Friday."],["She had went home before I came.","She had <b>gone</b> home before I came."]];
+document.getElementById('mis').innerHTML=M.map(m=>`<div class="x">❌ ${m[0]}</div><div class="v">✅ ${m[1]}</div>`).join('');
+document.getElementById('e1').innerHTML=li([
+"When I got to the station, the train ___ (already / leave).",
+"She was tired because she ___ (not / sleep) the night before.",
+"By Friday, we ___ (finish) the project and met the deadline.",
+"He ___ (never / see) the sea before that trip.",
+"When the manager came, the colleagues ___ (already / do) everything necessary.",
+"I couldn’t open the file because I ___ (accidentally / delete) it.",
+"They were exhausted because they ___ (work) overtime all week.",
+"After she ___ (have) lunch, she went back to work."]);
+document.getElementById('a1').innerHTML="1 had already left · 2 hadn’t slept · 3 had finished · 4 had never seen · 5 had already done · 6 had accidentally deleted · 7 had worked · 8 had had";
+document.getElementById('e2').innerHTML=li([
+"I was late. When I arrived, the meeting (started / had already started).",
+"When I arrived, everybody stood up and (applauded / had applauded).",
+"She (lived / had lived) in Moscow for ten years before she moved to Kazan.",
+"I (visited / had visited) India in 2019.",
+"He was angry because she (lied / had lied) to him.",
+"I came home, (had / had had) dinner and went to bed.",
+"By the time we got to the airport, the plane (took off / had taken off).",
+"I didn’t recognise him because he (changed / had changed) a lot."]);
+document.getElementById('a2').innerHTML="1 had already started · 2 applauded · 3 had lived · 4 visited · 5 had lied · 6 had · 7 had taken off · 8 had changed";
+document.getElementById('e3').innerHTML=li([
+"When I came home, my sister already left.",
+"I had visited Paris in 2019.",
+"She was tired because she didn’t sleep the night before.",
+"By the time we arrived, the shop has closed.",
+"Did you ever have been abroad before you were twenty?",
+"He said that he lost his keys.",
+"After she had eaten, she had gone back to work.",
+"I had never saw snow before that day."]);
+document.getElementById('a3').innerHTML=li([
+"…my sister <b>had</b> already <b>left</b>.","I <b>visited</b> Paris in 2019.","…because she <b>hadn’t slept</b> the night before.","…the shop <b>had closed</b>.","<b>Had</b> you ever <b>been</b> abroad before you were twenty?","He said that he <b>had lost</b> his keys.","After she had eaten, she <b>went</b> back to work.","I had never <b>seen</b> snow before that day."]);
+document.getElementById('e4').innerHTML=li([
+"Когда мы приехали на вокзал, поезд уже ушёл. <span class=hint>(already)</span>",
+"Она была измотана, потому что накануне работала сверхурочно. <span class=hint>(exhausted / work overtime)</span>",
+"Я не могла открыть файл, потому что случайно удалила его. <span class=hint>(accidentally)</span>",
+"К пятнице мы уже закончили проект. <span class=hint>(by)</span>",
+"До этой поездки он никогда не видел море. <span class=hint>(never)</span>",
+"Когда я пришла в офис, начальник уже распределил все задачи. <span class=hint>(delegate)</span>",
+"Мы пропустили рейс, потому что попали в пробку. <span class=hint>(get stuck / traffic jam)</span>",
+"Она сказала, что уже сделала всю работу по дому. <span class=hint>(housework)</span>",
+"Я не сразу узнала его, потому что он сильно изменился. <span class=hint>(recognise)</span>",
+"Когда он вышел из дома, он понял, что забыл телефон. <span class=hint>(realise / forget)</span>"]);
+document.getElementById('e5').innerHTML=li([
+"What had you done before our last lesson started?<br><span class=ru>(Что ты успела сделать до начала нашего прошлого урока?)</span>",
+"What had already happened by the time you started work today?<br><span class=ru>(Что уже произошло к тому моменту, как ты сегодня начала работать?)</span>",
+"Had you ever been abroad before you were twenty? Where had you been?<br><span class=ru>(Ты бывала за границей до двадцати лет? Где ты успела побывать?)</span>",
+"Think about the last time you were late. What had happened that morning?<br><span class=ru>(Вспомни, когда ты в последний раз опаздывала. Что случилось в то утро?)</span>",
+"Before you started your current job, had you worked anywhere else? What had you done?<br><span class=ru>(До того как ты начала нынешнюю работу, ты работала где-то ещё? Чем ты занималась?)</span>",
+"What English had you learned at school before we started our lessons? How much had you forgotten?<br><span class=ru>(Что ты успела выучить в школе по английскому до наших занятий? Как много ты забыла?)</span>",
+"Tell me about the best holiday you have ever had. What had you planned before you went? What hadn’t you expected?<br><span class=ru>(Расскажи о лучшем отпуске в твоей жизни. Что ты запланировала заранее? Чего ты не ожидала?)</span>",
+"Tell me about a time when you arrived somewhere and something had already happened (the shop had closed, the train had left…).<br><span class=ru>(Расскажи о случае, когда ты приехала куда-то, а там уже что-то случилось: магазин закрылся, поезд ушёл…)</span>"]);
+</script></body></html>
