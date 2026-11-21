@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Used to, Be used to, Get used to</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--m:#4A1A26;--m2:#7A2E40;--g:#5F7284;--bg:#F1E9DB;--card:#FBF7EF;--ink:#2B1F22;--line:#DCE3E8;--a:#1d6fa5;--b:#2f7d5b;--c:#c2185b;--ok:#2f7d5b;--bad:#b3362f;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Manrope,system-ui,sans-serif;padding-bottom:50px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;margin:0;line-height:1.15}
+header{background:var(--m);color:#F1E9DB;text-align:center;padding:38px 20px 16px}
+header h1{font-size:clamp(28px,6vw,46px)}header p{margin:8px 0 0;color:#d9c3b3}
+nav{display:flex;justify-content:center;gap:8px;background:var(--m);padding:0 16px 18px}
+nav button{font:800 14px Manrope,sans-serif;border:1.5px solid #F1E9DB;background:transparent;color:#F1E9DB;padding:9px 20px;border-radius:999px;cursor:pointer}
+nav button.on{background:#F1E9DB;color:var(--m)}
+main{max-width:880px;margin:0 auto;padding:0 18px}
+.panel{display:none}.panel.on{display:block}
+h2{font-size:clamp(26px,5vw,34px);color:var(--m2);margin:38px 0 12px;border-bottom:2px solid var(--m2);padding-bottom:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:12px}
+.card>p{margin:4px 0}
+.rule{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--c);border-radius:14px;padding:14px 18px;margin-bottom:14px}
+.rule h3{font-size:28px;color:var(--c);margin-bottom:4px}
+.rule .f{display:inline-block;background:var(--c);color:#fff;border-radius:8px;padding:2px 12px;font-weight:800;font-size:15px;margin:2px 0 8px}
+.rule h4{margin:14px 0 4px;font-size:15px;color:var(--c);text-transform:uppercase;letter-spacing:.8px}
+.ex{margin:5px 0}.ex b{color:var(--m2)}.ex span{display:block;color:var(--g);font-size:15px}
+.ru{color:var(--g);font-size:15px}
+table{width:100%;border-collapse:collapse;background:var(--card);margin:6px 0 14px;font-size:15.5px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--m);color:#F1E9DB}td.l{background:#e8dfcd;font-weight:800}
+.step{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+.step i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--m);color:#fff;font:700 18px/34px Manrope;text-align:center;font-style:normal}
+.line{display:flex;align-items:stretch;gap:6px;margin:12px 0}
+.line div{flex:1;border-radius:12px;padding:10px 12px;color:#fff;font-size:15px;text-align:center}
+.line b{display:block;font:700 21px 'Cormorant Garamond',serif}
+.line .ar{flex:none;width:22px;background:none;color:var(--m2);font-size:26px;padding:0;align-self:center}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.pair div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.pair .s{border-top:5px solid var(--b)}.pair .p{border-top:5px solid var(--c)}
+.pair small{display:block;font-weight:800;color:var(--g);margin-bottom:3px;text-transform:uppercase;font-size:12px;letter-spacing:.8px}
+.mis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mis div{border-radius:10px;padding:10px 14px;background:var(--card);border:1px solid var(--line)}
+.mis .x{border-left:6px solid var(--bad)}.mis .v{border-left:6px solid var(--ok)}
+ol{padding-left:22px;margin:0}li{margin-bottom:11px}
+.hint{color:var(--g);font-weight:600;font-size:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:8px 0 14px}
+summary{cursor:pointer;font-weight:800;color:var(--m2)}
+footer{text-align:center;margin-top:44px;font:600 24px 'Cormorant Garamond',serif;color:var(--g)}
+@media(max-width:600px){.mis,.pair{grid-template-columns:1fr}.line{flex-direction:column}.line .ar{transform:rotate(90deg);align-self:center;width:auto}}
+</style></head>
+<body>
+<header><h1>Used to · Be used to · Get used to</h1><p>Правило и практика</p></header>
+<nav><button class="on" onclick="tab('t1',this)">Правило</button><button onclick="tab('t2',this)">Практика</button></nav>
+<main>
+<div id="t1" class="panel on">
+
+<h2>Три конструкции, три смысла</h2>
+<div class="rule" style="--c:#1d6fa5"><h3>used to + глагол</h3><p><b>Раньше так было, а теперь нет.</b></p><p class="ex">I used to play football. <span>Раньше я играла в футбол (а теперь нет).</span></p></div>
+<div class="rule" style="--c:#2f7d5b"><h3>be used to + V-ing / существительное</h3><p><b>Мне привычно, я привык(ла).</b> Это состояние: привычка уже есть.</p><p class="ex">I’m used to getting up early. <span>Мне привычно рано вставать.</span></p></div>
+<div class="rule" style="--c:#c2185b"><h3>get used to + V-ing / существительное</h3><p><b>Привыкаю, привык(ла).</b> Это процесс: сначала было непривычно, потом привычка появилась.</p><p class="ex">I’m getting used to getting up early. <span>Я привыкаю рано вставать.</span></p></div>
+
+<h2>Главное: русское «привык» это два английских варианта</h2>
+<div class="card"><p>По-русски «я привык» может значить два разных действия: <b>«я стал привыкать и привык»</b> (процесс) или <b>«мне это привычно»</b> (состояние). В английском для них разные конструкции. Вот как это выглядит на одной истории во времени:</p>
+<div class="line">
+<div style="background:var(--bad)"><b>wasn’t used to</b>тогда: мне было непривычно (состояние)</div><div class="ar">→</div>
+<div style="background:var(--c)"><b>got used to</b>потом: я привыкла (процесс закончился)</div><div class="ar">→</div>
+<div style="background:var(--b)"><b>am used to</b>сейчас: мне привычно (состояние)</div></div>
+<p class="ex">When I moved to Moscow, I <b>wasn’t used to</b> the cold. After a few months, I <b>got used to</b> it. Now I <b>’m used to</b> it. <span>Когда я переехала в Москву, мне было непривычно холодно. Через несколько месяцев я привыкла. Теперь мне это привычно.</span></p></div>
+
+<h2>Как понять, что выбрать</h2>
+<div class="card">
+<div class="step"><i>1</i><div><b>Раньше так было, а теперь нет?</b> (раньше, когда-то, в детстве) → <b>used to + V1</b></div></div>
+<div class="step"><i>2</i><div><b>Описываю состояние «привычно / непривычно» в какой-то момент?</b> Слова-подсказки: уже, всегда, ещё не, к тому времени, мне было непривычно → <b>be used to</b> (am, is, are, was, were, will be)</div></div>
+<div class="step"><i>3</i><div><b>Описываю процесс или момент, когда привычка появилась?</b> Слова-подсказки: постепенно, через месяц, со временем, наконец, понадобилось время, пока не, привыкаю → <b>get used to</b> (get, got, getting, will get, have got)</div></div>
+<p class="ru">Проверка: поставь вопрос «Когда это произошло?» Если ответ «через месяц, со временем», то это get used to. Если «к тому моменту уже было так», то это be used to.</p></div>
+
+<div id="rules"></div>
+
+<h2>Was used to или got used to? Пары для сравнения</h2>
+<div id="pairs"></div>
+
+<h2>Как меняется время</h2>
+<table>
+<tr><th>Конструкция</th><th>Прошлое</th><th>Настоящее</th><th>Будущее</th></tr>
+<tr><td class="l">used to</td><td>used to + V1 (раньше)</td><td>нет такой формы</td><td>нет такой формы</td></tr>
+<tr><td class="l">be used to</td><td>was / were used to</td><td>am / is / are used to</td><td>will be used to</td></tr>
+<tr><td class="l">get used to</td><td>got used to</td><td>am getting used to / have got used to</td><td>will get used to</td></tr>
+</table>
+
+<h2>Мини-история со всеми тремя</h2>
+<div class="card"><p class="ex">When I moved to a new city, I <b>wasn’t used to</b> the cold winters. At first it was tough, but slowly I <b>got used to</b> them. Now I <b>’m used to</b> the winters, and I even like them. I <b>used to</b> hate winter, but not any more.</p>
+<p class="ru">Когда я переехала в новый город, мне было непривычно с холодными зимами. Сначала было тяжело, но постепенно я привыкла. Теперь мне это привычно, и зима мне даже нравится. Раньше я ненавидела зиму, но больше нет.</p></div>
+
+<h2>Типичные ошибки</h2>
+<div class="mis" id="mis"></div>
+</div>
+
+<div id="t2" class="panel">
+<h2>Task 1. Used to, be used to or get used to?</h2>
+<p class="ru">Поставь нужную конструкцию в правильной форме.</p>
+<div class="card"><ol id="e1"></ol></div>
+<details><summary>Answers</summary><p id="a1"></p></details>
+
+<h2>Task 2. Was used to or got used to?</h2>
+<p class="ru">Выбери вариант, который подходит по смыслу.</p>
+<div class="card"><ol id="e2"></ol></div>
+<details><summary>Answers</summary><p id="a2"></p></details>
+
+<h2>Task 3. Find and correct the mistake</h2>
+<div class="card"><ol id="e3"></ol></div>
+<details><summary>Answers</summary><ol id="a3"></ol></details>
+
+<h2>Task 4. Translate into English</h2>
+<p class="ru">Слово в скобках нужно употребить. Время выбери сама.</p>
+<div class="card"><ol id="e4"></ol></div>
+
+<h2>Task 5. Speaking</h2>
+<div class="card"><ol id="e5"></ol></div>
+</div>
+<footer>voronovaschool</footer>
+</main>
+<script>
+function tab(id,b){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));document.getElementById(id).classList.add('on');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');}
+const ex=a=>a.map(x=>x.length==1?`<h4>${x[0]}</h4>`:`<div class="ex">${x[0]}<span>${x[1]}</span></div>`).join('');
+const R=[
+["used to","#1d6fa5","used to + V1","Только прошедшее время. Для одного конкретного события не используется. Отрицание: didn’t use to. Вопрос: Did you use to…?",[
+["I <b>used to</b> play football every weekend.","Раньше я играла в футбол каждые выходные."],
+["She <b>used to</b> live in Moscow.","Раньше она жила в Москве."],
+["We <b>used to</b> go to the sea every summer.","Мы раньше каждое лето ездили на море."],
+["He <b>used to</b> smoke, but he quit.","Раньше он курил, но бросил."],
+["There <b>used to</b> be a cinema here.","Раньше здесь был кинотеатр."],
+["I <b>used to</b> be afraid of dogs.","Раньше я боялась собак."],
+["They <b>used to</b> work together.","Раньше они работали вместе."],
+["I <b>didn’t use to</b> like coffee.","Раньше я не любила кофе."],
+["<b>Did</b> you <b>use to</b> walk to school?","Ты раньше ходила в школу пешком?"]]],
+["be used to","#2f7d5b","am / is / are / was / were / will be + used to + V-ing или существительное","Состояние: привычка уже есть. Время показывает глагол be.",[
+["Сейчас (am / is / are used to)"],
+["I’<b>m used to</b> getting up early.","Мне привычно рано вставать."],
+["She’<b>s used to</b> the noise.","Она привыкла к шуму."],
+["We’<b>re used to</b> working overtime in December.","Нам привычно работать сверхурочно в декабре."],
+["He’<b>s used to</b> living alone.","Он привык жить один."],
+["I’<b>m not used to</b> this heat yet.","Я ещё не привыкла к этой жаре."],
+["<b>Are</b> you <b>used to</b> the new software?","Ты привыкла к новой программе?"],
+["Тогда, в прошлом (was / were used to)"],
+["When I moved to Moscow, I <b>wasn’t used to</b> the cold.","Когда я переехала в Москву, мне было непривычно холодно."],
+["He <b>was used to</b> the heat because he grew up in Egypt.","Ему была привычна жара, потому что он вырос в Египте."],
+["We <b>weren’t used to</b> such big portions.","Нам были непривычны такие большие порции."],
+["She <b>was used to</b> getting up at six, so it wasn’t hard.","Ей было привычно вставать в шесть, поэтому это было несложно."],
+["<b>Were</b> you <b>used to</b> the climate when you arrived?","Тебе был привычен местный климат, когда ты приехала?"],
+["В будущем (will be used to)"],
+["Don’t worry: in a month you’<b>ll be used to</b> it.","Не волнуйся: через месяц тебе это будет привычно."],
+["By next year I’<b>ll be used to</b> the new job.","К следующему году я привыкну к новой работе (она станет привычной)."]]],
+["get used to","#c2185b","get / got / getting / will get / have got + used to + V-ing или существительное","Процесс: сначала было непривычно, потом привычка появилась.",[
+["Прошедшее (got used to)"],
+["At first it was hard, but I <b>got used to</b> it.","Сначала было трудно, но я привыкла."],
+["It took me a month to <b>get used to</b> working from home.","Мне понадобился месяц, чтобы привыкнуть работать из дома."],
+["She <b>got used to</b> the noise after a few days.","Она привыкла к шуму через несколько дней."],
+["We <b>got used to</b> the heat quickly.","Мы быстро привыкли к жаре."],
+["He <b>didn’t get used to</b> the new city, so he went home.","Он так и не привык к новому городу и уехал домой."],
+["I <b>couldn’t get used to</b> the cold, so I moved south.","Я не смогла привыкнуть к холоду и переехала на юг."],
+["Сейчас, в процессе (am getting used to)"],
+["I’<b>m getting used to</b> my new schedule.","Я привыкаю к новому графику."],
+["She’<b>s</b> slowly <b>getting used to</b> life abroad.","Она постепенно привыкает к жизни за границей."],
+["<b>Are</b> you <b>getting used to</b> the new software?","Ты привыкаешь к новой программе?"],
+["Будущее (will get used to)"],
+["You’<b>ll get used to</b> it.","Ты к этому привыкнешь."],
+["Don’t worry, you’<b>ll soon get used to</b> the noise.","Не волнуйся, ты скоро привыкнешь к шуму."],
+["Привыкла и теперь привычно (have got used to)"],
+["I’<b>ve got used to</b> getting up early.","Я привыкла рано вставать (и теперь мне это привычно)."],
+["<b>Have</b> you <b>got used to</b> the weather here?","Ты уже привыкла к здешней погоде?"],
+["Общее"],
+["I <b>can’t get used to</b> the noise.","Я не могу привыкнуть к шуму."],
+["I’ll never <b>get used to</b> the winter darkness.","Я никогда не привыкну к зимней темноте."]]]];
+document.getElementById('rules').innerHTML=R.map(r=>`<h2>${r[0]}</h2><div class="rule" style="--c:${r[1]}"><span class="f">${r[2]}</span><p class="ru">${r[3]}</p>${ex(r[4])}</div>`).join('');
+const P=[
+["When I started the job, I <b>wasn’t used to</b> working in a team.","Когда я начала работать, мне было непривычно работать в команде. (состояние в тот момент)","After a few weeks, I <b>got used to</b> working in a team.","Через несколько недель я привыкла работать в команде. (процесс закончился)"],
+["He <b>was used to</b> the heat because he grew up in Egypt.","Ему была привычна жара: он вырос в Египте. (привычка была ещё до этого момента)","He <b>got used to</b> the heat after a few days.","Он привык к жаре через несколько дней. (привычка появилась)"],
+["I <b>was used to</b> getting up at six, so it was easy.","Мне было привычно вставать в шесть, поэтому это было легко.","I <b>got used to</b> getting up at six. It took me a month.","Я привыкла вставать в шесть. Мне понадобился месяц."],
+["We <b>weren’t used to</b> such noise, so we couldn’t sleep.","Нам был непривычен такой шум, поэтому мы не могли спать. (состояние)","We <b>couldn’t get used to</b> the noise, so we moved.","Мы так и не смогли привыкнуть к шуму и переехали. (процесс не получился)"],
+["By the time I left, I <b>was used to</b> the city.","К тому времени, как я уехала, мне уже было привычно в этом городе. (состояние к моменту)","In the end, I <b>got used to</b> the city.","В конце концов я привыкла к городу. (итог процесса)"]];
+document.getElementById('pairs').innerHTML=P.map(p=>`<div class="pair"><div class="s"><small>Состояние</small>${p[0]}<br><span class="ru">${p[1]}</span></div><div class="p"><small>Процесс</small>${p[2]}<br><span class="ru">${p[3]}</span></div></div>`).join('');
+const M=[["I’m used to get up early.","I’m used to <b>getting</b> up early."],["I used to going to the gym.","I used to <b>go</b> to the gym."],["I didn’t used to like coffee.","I didn’t <b>use</b> to like coffee."],["I use to live in Kazan.","I <b>used</b> to live in Kazan."],["She is use to the noise.","She is <b>used</b> to the noise."],["I’m getting used to get up early.","I’m getting used to <b>getting</b> up early."],["I was get used to the cold.","I <b>got</b> used to the cold. / I <b>was</b> used to the cold."],["When I moved, I didn’t used to the cold.","When I moved, I <b>wasn’t used</b> to the cold."],["I’m used to live alone.","I’m used to <b>living</b> alone."],["I used to getting up at six. (раньше)","I <b>used to get</b> up at six."]];
+document.getElementById('mis').innerHTML=M.map(m=>`<div class="x">❌ ${m[0]}</div><div class="v">✅ ${m[1]}</div>`).join('');
+const li=a=>a.map(x=>'<li>'+x+'</li>').join('');
+document.getElementById('e1').innerHTML=li([
+"When I was a child, I ___ (go) to my grandmother’s village every summer.",
+"He grew up in the north, so he ___ (the cold).",
+"At first it was difficult, but after a month I ___ (the new schedule).",
+"I’m not ___ (work) at night. I usually sleep then.",
+"We ___ (live) in a small flat, but now we have a house.",
+"Don’t worry. You ___ (soon / the noise).",
+"I can’t ___ (the winter darkness). I hate it.",
+"She ___ (drive) on the left when she lived in London, so it wasn’t a problem."]);
+document.getElementById('a1').innerHTML="1 used to go · 2 was used to the cold · 3 got used to the new schedule · 4 used to working (I’m not used to working at night) · 5 used to live · 6 will soon get used to the noise · 7 get used to the winter darkness · 8 was used to driving";
+document.getElementById('e2').innerHTML=li([
+"When I arrived in Berlin, I (wasn’t used to / didn’t get used to) the language, so everything was difficult.",
+"After a few weeks, I (was used to / got used to) the language.",
+"By the time I left, I (was used to / got used to) living there.",
+"She grew up in a big city, so she (was used to / got used to) the traffic.",
+"He couldn’t (be used to / get used to) the cold, so he went home.",
+"It took me six months (to be used to / to get used to) the new job.",
+"They (weren’t used to / didn’t get used to) such big portions, so they couldn’t finish the meal.",
+"Slowly he (was used to / got used to) the quiet life in the village."]);
+document.getElementById('a2').innerHTML="1 wasn’t used to · 2 got used to · 3 was used to · 4 was used to · 5 get used to · 6 to get used to · 7 weren’t used to · 8 got used to";
+document.getElementById('e3').innerHTML=li([
+"I’m used to get up early.",
+"I didn’t used to like coffee.",
+"She was get used to the noise after a few days.",
+"When I moved to Moscow, I didn’t used to the cold.",
+"I used to going to the gym every day.",
+"I’m getting used to work from home.",
+"He use to live in Kazan.",
+"We are used to the noise last year."]);
+document.getElementById('a3').innerHTML=li([
+"I’m used to <b>getting</b> up early.","I didn’t <b>use</b> to like coffee.","She <b>got</b> used to the noise after a few days.","…I <b>wasn’t used</b> to the cold.","I used to <b>go</b> to the gym every day.","I’m getting used to <b>working</b> from home.","He <b>used</b> to live in Kazan.","We <b>were</b> used to the noise last year."]);
+document.getElementById('e4').innerHTML=li([
+"Когда я переехала, мне было непривычно жить в большом городе. <span class=hint>(be used to)</span>",
+"Через месяц я привыкла к новому графику. <span class=hint>(get used to)</span>",
+"Он вырос на севере, поэтому привык к холоду. <span class=hint>(be used to / grow up)</span>",
+"Сначала было трудно, но потом мы привыкли к жаре. <span class=hint>(get used to)</span>",
+"Я не привыкла вставать рано. <span class=hint>(be used to)</span>",
+"Она не смогла привыкнуть к шуму и переехала. <span class=hint>(get used to)</span>",
+"Раньше он работал по ночам, а теперь привык работать днём. <span class=hint>(used to / be used to)</span>",
+"К тому времени, как я уехала, я уже привыкла к этому городу. <span class=hint>(be used to / by the time)</span>",
+"Мы привыкаем к жизни в незнакомом городе. <span class=hint>(get used to / unfamiliar)</span>",
+"Они привыкли ходить пешком, поэтому не взяли такси. <span class=hint>(be used to / on foot)</span>"]);
+document.getElementById('e5').innerHTML=li([
+"What was the hardest thing to <b>get used to</b> when you started your current job?<br><span class=ru>(К чему было труднее всего привыкнуть, когда ты начала работать на нынешнем месте?)</span>",
+"How long did it take you to <b>get used to</b> a new phone, new software or a new schedule?<br><span class=ru>(Сколько тебе понадобилось времени, чтобы привыкнуть к новому телефону, программе или графику?)</span>",
+"What <b>weren’t you used to</b> when you first started something new?<br><span class=ru>(К чему ты не была привычна, когда только начала что-то новое?)</span>",
+"What things <b>are you used to</b> now that felt strange before?<br><span class=ru>(К каким вещам ты привыкла сейчас, которые раньше казались странными?)</span>",
+"What did you <b>use to</b> do as a child that you don’t do now?<br><span class=ru>(Что ты делала в детстве, чего больше не делаешь?)</span>",
+"What are you <b>getting used to</b> at the moment?<br><span class=ru>(К чему ты привыкаешь сейчас?)</span>",
+"Is there something you <b>can’t get used to</b>?<br><span class=ru>(Есть ли что-то, к чему ты никак не можешь привыкнуть?)</span>",
+"What are you <b>used to</b> that other people find strange?<br><span class=ru>(К чему ты привыкла, а другим людям это кажется странным?)</span>",
+"When you travel abroad, what do you need time to <b>get used to</b>?<br><span class=ru>(Когда ты путешествуешь за границей, к чему тебе нужно время привыкнуть?)</span>",
+"Tell me a story: when you started something new, what <b>weren’t you used to</b>, how did you <b>get used to</b> it, and what <b>are you used to</b> now?<br><span class=ru>(Расскажи историю: когда ты начала что-то новое, к чему ты не была привычна, как ты к этому привыкла и к чему привыкла теперь?)</span>"]);
+</script></body></html>
